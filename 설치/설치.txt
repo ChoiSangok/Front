@@ -1,0 +1,36 @@
+< 이클립스 EE 다운로드 >
+ 
+ - http://eclipse.org/
+
+ - download 버튼 클릭
+
+ - download Package 클릭
+
+ - Eclipse Ide for JAVA developer 항목 windows 쪽 클릭
+ 
+ - Download 클릭
+
+ - eclipse.exe 실행
+
+< Apache Tomcat 웹서버 다운 받기 >
+
+ -http://tomcat.apache.org/
+
+ -toacat 9.0 다운로드
+
+< 이클립스에 Server RUntime(서버 실행환경) 등록하기
+
+ - 이클립스에서 구동할 수 있도록 서버 환경파일을 등록한다
+ 
+ - 서버를 설치한 것은 아니고 등록만 된 상태
+
+ - Window 메뉴의 Preferences 항목 선택
+
+ - Server-Runtime Environments 선택
+
+ - 설정해주기 (Browse 버튼클릭)
+
+ - Apply and close
+
+
+
