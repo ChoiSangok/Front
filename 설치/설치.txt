@@ -33,4 +33,20 @@
  - Apply and close
 
 
+< HTML 실행시키기 >
 
+-TEST 프로젝트 만들고 WebContent안에 hello폴더, hi.html파일에 작성
+- http://localhost:8088/Test/hello/hi.html 접속 -실행
+
+-------------톰캣웹서버(야옹)-------------------
+- 프로토콜 : http( WEB Service )
+
+- 도메인주소(IP) : localhost(자기 자신)
+
+- 포트번호 : 8088 (Apache Tomcat 웹 서버 )
+
+- 컨텍스트 Path (경로) : /Test
+
+- 파일( 자원, resource ) 의 위치 : /hello/hi.html
+
+- Context Path를 '/'만으로 설정해주면 곧바로 /hello로 연결된다 ->1개는 생략가능
