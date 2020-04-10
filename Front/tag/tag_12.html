@@ -36,6 +36,7 @@
 <input type="checkbox" id="chk2" name="chk" value="B"/> |
 <input type="checkbox" id="chk3" name="chk" value="C" checked="checked"/>
 
+<br><br>
 <!-- check박스는 선택(체크 )하지 않으면 아예 전달파라미터를 생성하지 않음 -->
 <!--  checkbox는 다중선택이 가능함 -->
 <!--  value를 적용하지 않으면 선택된 checked는 "on" 을 값으로 전달함 -->
@@ -43,10 +44,30 @@
 <!-- name 속성이 같은 checkbox가 여러 개 있어도 각각의 항목으로 전달함 -->
 
 
+<label><input type="radio" name="gender" value="m"/>남</label>
+<label><input type="radio" name="gender" value="f"/>여</label>
+<label><input type="radio" name="gender" value="o" checked ="checked"/>기타</label>
+
+<!-- radio는 checkbox와 비슷한 동작을 한다 -->
+<!-- 선택된 항목의 값이 "on"으로 전달된다 -->
+<!-- value속성의 값을 넣으면 해당 값으로 전달된다 -->
+<!-- name이 같은 radio는 중복 선택이 안된다 -->
+<!-- name 이 같은 radio 들은 같은 라디오그룹(radio group ) 이라고 한다 -->
+
 <br><br>
+
+<input type="button" value="확인" onclick="alert('알림!~확인됐습니다!');"/>
+<br><br>
+
 <input type="submit" value="전송"/>
 
 
 </form>
 </body>
 </html>
+
+
+
+
+
+
