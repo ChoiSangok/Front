@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+<h1> form 태그</h1>
+<hr>
+
+
+<form action="" method="get">
+
+<!-- id 속성 : HTML 문서내에서 태그에 고유한 이름을 붙이는 속성 -->
+<!-- name 속성 : form 태그를 이용해서 서버로 전송될 때 변수명으로 사용  -->
+
+
+
+
+
+<label>아이디 <input type="text" name="userid" id="uid" size="18"
+			placeholder="아이디를 입력하세요" value="Grape"  /></label><br><br>
+
+
+<!--*******************************************  -->
+<!-- 시험이다시험~~~~~~~~~~~~~~  -->
+<label for="pw">패스워드</label> 
+<input type="password" name="userpw" id="pw" size="20"
+			placeholder="비밀번호를 입력하세요 " value="hi"/> <br><br>
+
+<label for="chk"> 체크1</label>
+
+<input type="checkbox" id="chk" name="chk" value="A"/> |
+
+<label for="chk2"> 체크2</label>
+<input type="checkbox" id="chk2" name="chk" value="B"/> |
+<input type="checkbox" id="chk3" name="chk" value="C" checked="checked"/>
+
+<!-- check박스는 선택(체크 )하지 않으면 아예 전달파라미터를 생성하지 않음 -->
+<!--  checkbox는 다중선택이 가능함 -->
+<!--  value를 적용하지 않으면 선택된 checked는 "on" 을 값으로 전달함 -->
+<!-- value 값이 적용되어 있으면 선택된 checkbox 는 value값을 전달함 -->
+<!-- name 속성이 같은 checkbox가 여러 개 있어도 각각의 항목으로 전달함 -->
+
+
+<br><br>
+<input type="submit" value="전송"/>
+
+
+</form>
+</body>
+</html>
