@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>20200410</title>
+
+<style type="text/css">
+
+/* table, th, td 태그에 스타일(모양)을 적용한다 */
+/* th { border: 10px solid orange;} */
+/* table{ border : 1px solid blue;} */
+/* td{ border: 2px solid red; } */
+
+table, th, td{
+	border :1px solid PURPLE;
+/*	border : 태그의 테두리 스타일 설정 */
+
+/*  border : 1px solid #ccc; */
+/*  두께가 1px, 실선, 회색 */
+
+	border-collapse: collapse;
+/* 	border-collapse : 테이블 테두ㄱ리가 겹치는 부분에 대한 설정 */
+
+/* 	separate - 분리시켜 표현( 기본값) */
+/* 	collapse - 합쳐서 하나로 표현 */
+
+
+	}
+
+</style>
+
+</head>
+<body>
+
+<h1>테이블 태그</h1>
+<hr>
+
+<table>
+
+<!-- 테이블의 이름 -->
+<caption>전화번호부</caption>
+
+
+
+<!-- 테이블 태그 안쪽에는 반드시 td,th를 이용해서 데이터를 표현한다  -->
+<!-- <div>테스트</div>  -->
+
+<!-- td, th는 반드시 tr안에 작성한다 -->
+
+<!-- 테이블의 머리글, 최상단 행으로 고정 -->
+<thead>
+<tr>
+	<th>이름</th>
+	<th>주소</th>
+	<th>전화번호</th>
+</tr>
+</thead>
+
+<!-- tbody : 테이블의 본문 내용(행들)을 작성하는 태그 -->
+<tbody>
+<tr>
+	<td>Sangok</td>
+	<td>서울시 중구</td>
+	<td>123456789</td>
+</tr>
+
+<tr>
+	<td>Alice</td>
+	<td>서울시 강남구</td>
+	<td>123456789</td>
+</tr>
+
+<tr>
+	<td>Bob</td>
+	<td>서울시 중구</td>
+	<td>123456789</td>
+</tr>
+</tbody>
+
+
+
+<!-- tfoot : 테이블의 바닥글, 최하단 행으로 고정 -->
+<tfoot>	
+<tr>
+	<th>NAME</th>
+	<th>ADDRESS</th>
+	<th>PHONE</th>
+</tr>
+</tfoot>
+
+
+</table>
+
+
+
+</body>
+</html>
+
+
