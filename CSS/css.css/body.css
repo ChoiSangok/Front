@@ -1,0 +1,8 @@
+@charset "UTF-8";
+
+
+/* 태그 선택자 ( body 태그 선택) */
+
+body{
+	color: skyblue;
+}
