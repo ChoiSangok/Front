@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+<h1> form 태그</h1>
+<hr>
+
+
+<form action="" method="get">
+
+<!-- id 속성 : HTML 문서내에서 태그에 고유한 이름을 붙이는 속성 -->
+<!-- name 속성 : form 태그를 이용해서 서버로 전송될 때 변수명으로 사용  -->
+
+
+
+
+
+<label>아이디 <input type="text" name="userid" id="uid" size="18"
+			placeholder="아이디를 입력하세요" value="Grape"  /></label><br><br>
+
+
+<!--*******************************************  -->
+<!-- 시험이다시험~~~~~~~~~~~~~~  -->
+<label for="pw">패스워드</label> 
+<input type="password" name="userpw" id="pw" size="20"
+			placeholder="비밀번호를 입력하세요 " value="hi"/> <br><br>
+
+<label for="chk"> 체크1</label>
+
+<input type="checkbox" id="chk" name="chk" value="A"/> |
+
+<label for="chk2"> 체크2</label>
+<input type="checkbox" id="chk2" name="chk" value="B"/> |
+<input type="checkbox" id="chk3" name="chk" value="C" checked="checked"/>
+
+<br><br>
+<!-- check박스는 선택(체크 )하지 않으면 아예 전달파라미터를 생성하지 않음 -->
+<!--  checkbox는 다중선택이 가능함 -->
+<!--  value를 적용하지 않으면 선택된 checked는 "on" 을 값으로 전달함 -->
+<!-- value 값이 적용되어 있으면 선택된 checkbox 는 value값을 전달함 -->
+<!-- name 속성이 같은 checkbox가 여러 개 있어도 각각의 항목으로 전달함 -->
+
+
+<label><input type="radio" name="gender" value="m"/>남</label>
+<label><input type="radio" name="gender" value="f"/>여</label>
+<label><input type="radio" name="gender" value="o" checked ="checked"/>기타</label>
+
+<!-- radio는 checkbox와 비슷한 동작을 한다 -->
+<!-- 선택된 항목의 값이 "on"으로 전달된다 -->
+<!-- value속성의 값을 넣으면 해당 값으로 전달된다 -->
+<!-- name이 같은 radio는 중복 선택이 안된다 -->
+<!-- name 이 같은 radio 들은 같은 라디오그룹(radio group ) 이라고 한다 -->
+
+<br><br>
+
+<input type="button" value="확인" onclick="alert('알림!~확인됐습니다!');"/>
+<br><br>
+
+<!-- submit 버튼으로 생성됨 -->
+<button>버튼</button>
+<br><br>
+
+<!-- submit이 아닌 일반 버튼으로 생성됨 -->
+<button type="button">버튼2</button>
+<br><br>
+
+<!-- 파일 선택창 -->
+<input type="file" name="f"/>
+<br><br>
+
+<!-- 다중파일선택창 -->
+<input type="file" name="f_multi" multiple="multiple"/>
+<br><br>
+
+<!-- <!-- file  선택창은 기본적으로 1개만 가능한다 -->
+<!-- multiple 속성을 부여하면 여러 개 선택 가능하다 -->
+
+
+
+<input type="submit" value="전송" />
+<input type="reset" value="초기화" />
+
+<br><br>
+
+<!-- 숫자만입력가능 -->
+number <input type="number" name="n" min="1" max="100" step="2" value="50"/>
+<br><br>
+
+<!-- 내용중에 @이 있어야함 -->
+email <input type="email" name="e"/>
+<br><br>
+
+<!-- 프로토콜과 경로 문자 확인 -->
+URL<input type="url" name="u" />
+<br><br>
+
+range <input type="range" name="r" min="30" max="200"
+	step="2" value="150" />
+
+<!-- 컬러 picker -->
+<!-- 16진수표현법(Hexadecimal) 으로 값이전달된다 -->
+color <input type="color" name="c" />
+<br><br>
+
+<!-- 날짜 picker -->
+<!-- yyyy-mm-dd -->
+date <input type="date" name="d" />
+
+<!-- 시간 picker -->
+<!-- 전송형태 :  hh24:mi 형식 -->
+time <input type="time" name="t" />
+<br><br>
+
+<!-- 데이터목록 생성 태그 ************* t시험 -->
+<!-- 연결 되고있는 사항ㅁ보기 -->
+<datalist id="fruits">
+	<option value="apple">사과</option>
+	<option value="banana">바나나</option>
+	<option value="cherry">체리</option>
+	
+</datalist>
+<!-- <datalist> 태그 단독으로는 화면에 나타나지 않음 -->
+<!-- <input> 태그와 연결해서 사용한다 -->
+
+<!-- <datalist> 태그의 id값을 <input>태그의 list속성으로 연결한다 -->
+<!-- 속성 하나하나 역할을 알고있어함 -->
+<label for="fr">과일</label>
+<input list="fruits"/>
+
+
+
+
+</form>
+</body>
+</html>
+
+
+
+
