@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>20200413 CSS</title>
+
+<!-- 임베디드 방식의 스타일 적용 -->
+<!-- 	<style>태그를 이용한다</style> -->
+<style type="text/css">
+
+/* CSS 주석 */
+
+/* 선택자(selector)를 이용한다 */
+
+/* 태그 선택자 (모든 p태그) */
+
+p{
+/* 	글자 크기 지정 */
+	font-size: 30px;
+}
+
+/* 아이디선택자 */
+#hello {
+	color:blue;
+	font-size:50px;
+}
+
+</style>
+
+</head>
+<body>
+
+<!-- 스타일시트, Style Sheet -->
+<!-- 스타일속성: 스타일값; -->
+
+<!-- 글자 색상 : 빨강 -->
+
+<p style="color:purple;">안녕하세요</p>
+<p id ="hello"> hihihihihi</p>
+<p>hello nice</p>
+<span>여기는 span 태그!</span>
+
+
+</body>
+</html>
