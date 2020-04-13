@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>20200413 CSS</title>
+
+<link rel="stylesheet" href="./body.css" type="text/css" >
+<!-- link 태그 - HTML 문서에서 사용할 외부 문서를 지정하는 태그 -->
+<!-- rel 속성 - 외부 문서의 적용방식 ( 역할 ) 을 지정한다 -->
+<!-- href속성 - 외부 문서의 위치를 표현한다 -->
+<!-- type 속성 - 외부문서를 읽는 방법( 파일의 유형 )을 지정한다 -->
+
+
+
+
+</head>
+<body>
+
+
+<p>안녕하세용</p>
+<p>하이</p>
+<p>헬로</p>
+
+
+
+</body>
+</html>
