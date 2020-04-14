@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>20200414 css</title>
+<style type="text/css">
+/* 태그 선택자(div) 요소들을 전부 선택한다 */
+
+div{
+/* 	요소의 넓이 */
+	width:100px;
+	
+/* 	요소의 높이 */
+	height:100px;
+}
+
+</style>
+
+</head>
+<body>
+
+<h1> css 색상</h1>
+<h3>colorname, rgb, rgba, hex, hsl, hsla</h3>
+<hr>
+
+<div style="background-color:skyblue;"> 테스트 </div>
+<!-- rgb표현법 -->
+
+<div style="background-color:rgb(0,255,0);">green</div>
+<div style="background-color:rgb(255,255,0);">yellow</div>
+<div style="background-color:rgb(100%,100%,0%);">yellow</div>
+<hr>
+<input type="color" />
+<hr>
+
+<!-- rgba 표현 -->
+
+<div style="background-color: rgba(255,01,255,1.0);"> magenta</div>
+<div style="background-color: rgba(255,01,255,0.5);"> magenta(pale)</div>
+<!-- rgba 로 시작해도되고, rgb로 시작해도된다, 둘다 alpha 적용됨 -->
+<hr>
+
+<div style="background-color:#89E882;">#89E882</div>
+<div style="background-color:#1EABEB;">#1EABEB</div>
+<div style="background-color:#5AFF9B;">#5AFF9B</div>
+
+<hr>
+
+<div style="background-color:#ccc;">#ccc</div>
+<div style="background-color:#333;">#333</div>
+<div style="background-color:#666;">#666</div>
+
+<hr>
+
+<p style="color: hsl(0,100%,50%);"> 안녕하세요 </p>
+<p style="color: hsl(120,100%,50%);"> 안녕하세요 </p>
+<p style="color: hsl(240,100%,50%);"> 안녕하세요 </p>
+<p style="color: hsl(360,100%,50%);"> 안녕하세요 </p>
+<hr>
+
+<p style="color: hsl(60,100%,50%);"> 안녕하세요 </p>
+<p style="color: hsl(300,100%,50%);"> 안녕하세요 </p>
+<p style="color: hsl(280,100%,50%);"> 안녕하세요 </p>
+
+<hr>
+<p style="color: hsl(60,0%,50%);"> 안녕하세요 </p>
+<p style="color: hsl(300,50%,50%);"> 안녕하세요 </p>
+<p style="color: hsl(280,100%,50%);"> 안녕하세요 </p>
+
+<hr>
+
+<p style="color: hsl(240,100%,0%);"> 안녕하세요 </p>
+<p style="color: hsl(240,100%,20%);"> 안녕하세요 </p>
+<p style="color: hsl(240,100%,50%);"> 안녕하세요 </p>
+<p style="color: hsl(240,100%,80%);"> 안녕하세요 </p>
+<p style="color: hsl(240,100%,100%);"> 안녕하세요 </p>
+
+<hr>
+<p style="color: hsl(240,100%,50%,0.4);"> 안녕하세요 </p>
+
+</body>
+</html>
+
+
+
+
+
+
+
+
