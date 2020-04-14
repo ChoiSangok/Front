@@ -1,0 +1,288 @@
++ CSS 색상 단위
+
+ - 색상 이름, Color Name
+          black, pink, white, gray, green, ...
+
+- RGB
+          Red, Green, Blue 세 가지 색상의 조합으로 표현하는 방식
+          ( 빛의 삼원색 )
+          R, G, B 에 해당하는 각 값을 0 ~ 255 또는 0% ~ 100% 로 표현
+          RGB( R, G, B ) 로 표현한다
+          
+           ex )   rgb(0,0,0) - black
+                  rgb(255,255,255) - white
+                  rgb(255,255,0) - yellow
+                  
+                  rgb(100%,0%,100%) - megenta
+  
+  
+- RGBA
+          RGB + Alpha ( 투명도, Transparent )
+          
+          투명도를 0.0 (투명 ) - 1.0 ( 불투명 ) 의 수치로 표현한다
+          
+          ex ) rgb(0,255,255,0.5) -> 반투명 cyan ( 시안, 옥색, 청록 )
+
+- 16진수 표현법, Hexadecimal
+          RGB에 해당하는 각 수치를 16진수로 붙여서 한번에 표현한 것
+          
+          #RRGGBB 형식으로 표현한다
+          
+          #RGB 형식으로 축약해서 표현 가능하다
+          
+          같은 숫자 두개를 한 개로 줄여서 표현할 수 있다
+          RR -> R, GG -> G, BB -> B
+         
+         ex)      rgb(255,255,0) == #FFFF00 == #FF0 == YELLOW
+         
+         ex)      #6688DD == #68D
+         
+- HSL
+         Hue Satulation Lightness
+         색조, 채도, 명도
+         
+         색조, Hue : 0 - 360, 색 각도
+                0 또는 360 : RED
+                120 : GREEN
+                240 : BLUE
+         
+         채도, Satulation : 0% - 100%
+                0% : 무채색, 회색 빛
+                100% : 유채색, 본연의 빛
+         
+         명도, lightness : 0% - 100%
+                0% : 어두운, black
+                100% :밝은, white
+                
+                ** 50 %가 적당한 명도
+ 
+
+- HSLA
+         HSL + Alpha (투명도)
+
+
++ 웹 안전 색상, Web Safe Color
+
+ - RGB 기준으로 표현 가능한 색상의 조합은 16,777,216 가지
+ 
+ - RGB 표현의 모든 색상을 웹에서 나타내기에는 현실적인 어려움이 있다
+ 
+ - 색상을 간소화하여 웹 표준 안전 색상을 정한 것
+ - 운영체제, 브라우저, 장치 등에 구애받지 않고 표현 가능한 색상들을 정한 것
+ 
+ - 0-255 를 00,33,66,99,cc,ff  만사용한다
+ - 0,3,6,9,c,f 로 사용할 수 있다
+ 
+ - 256 가지 표현을 6개로 줄인 것
+ 
+        -> 6*6*6 = 216 가지 색상이 된다
+        
+        ex)   #ccc
+              #f36
+              #369
+
++CSS 크기 단위
+
+ - 고정 크기 단위
+        주변 요소 (부모요소 ) 의 크기에 영향받지 않고 일정한 크기를 유지하는 단위
+        
+        px : 픽셀, 화소 단위, 정확한 크기나 위치를 설정할 때 사용한다
+        
+        in : 인치, 설정되어있는 수치를 따라간다( 픽셀 수로 설정되어있음, 96px )
+        
+        pc : 파이카, 1/6 in == 16px
+        
+        pt : 포인트, 1/12 pc ==1/72 in
+        
+        cm : 센티미터, 2.54cm == 1 in
+        
+        mm : 밀리미터, 1/10 cm
+        
+        ** 고정 단위라고 하지만 현실의 크기와는 다르다
+        
+        
+
+ - 가변 크기 단위
+        주변요소 ( 부모요소 ) 에 비례한 상대적인 크기를 지정하는 단위
+        
+        % : 퍼센트, 태그 요소가 들어갈 수 있는 공간에서의 비율
+        ( 부모요소의 크기에 영향을 받는다)
+        
+        em : 이엠, 부모요소에서 지정한 크기의 배율로 설정하는 단위
+        ( 1em == 100%, 1.5em == 150% )
+        ( font-size(글자크기), line-height(줄간격) 에서 많이 사용된다 )
+        
+        rem : Root EM, 최상위 부모요소 (html 태그)의 크기의 배율로 설정하는 단위
+        
+        ex : 이엑스, Element X-height, 현재 포트의 소문자 'x' 크기의 배율
+
+
++ CSS 레이아웃, Layout
+
+ - 화면에 표현될 요소를 배치하는 작업
+ 
+ - 어떤 요소를 어디에 어떻게 배치할 것인가에 대한 전략
+ 
+ - 태그의 모양을 설정하고 배치될 위치, 다른 요소들과의 관계 등을 지정한다
+        
++ 태그의 기본적인 영역(공간) 의 크기
+
+ - width : 컨텐츠 영역의 너비
+ 
+ - height : 컨텐츠 영역의 높이
+ 
+ - padding : 내부 여백
+ 
+ - border : 테두리
+ 
+ - margin : 외부여백
+ 
+
++ CSS 여백
+
+ - 태그 요소를 감싸고 있는 투명한 공간
+ 
+ - padding(내부여백), margin(외부여백) 으로 구성된다
+ 
+ - padding, margin 둘 다 top, right, bottom, left로 구성된다
+ 
+ - 설정 방법
+        margin, padding 둘 다 설정방법이 똑같다
+        크기 단위로 설정한다
+        
+        margin : all; /* 상하좌우 전부 적용 */
+        
+        margin : top&bottom left&right; /*각각 상하, 좌우 적용*/
+        
+        margin : top left&right bottom; /*각각 상, 좌우, 하 적용*/
+        
+        margin : top right bottom left; /*각각 상, 우, 하, 좌 적용*/
+              
++ css 테두리
+
+ - 태그의 컨텐츠 영역과 내부 여백을 감싸는 영역
+ 
+ - 테두리까지 요소의 내부로 취급한다
+ 
+ - 설정 방식
+      border: border-width border-style border-color;
+      
+      ex)     border:1px solid black;
+              
+
+ - border-width : 테두리의 두께 
+           주로 px단위를 이용하여 설정한다
+              
+           thin(1px), thick(5px), medium ( 3px, 기본값 )
+ 
+ - border-style : 테두리 선의 모양(스타일)
+           solid : 실선
+           
+           dotted : 점
+           dashed : 점선
+           
+           double : 두 줄 
+           
+           groove : 안쪽 마루
+           ridge : 바깥쪽 마루
+           
+           inset : 오목, 안쪽 그림자
+           outset : 볼록, 바깥쪽 그림자
+           
+           hidden : 숨김, 없앰
+           
+           
+ 
+ - border-color : 테두리 색상
+
+
+   + 색 조합 추천 사이트
+  - https://color.adobe.com/ko/create
+
+  - https://www.webdesignrankings.com/resources/lolcolors/
+
+  - https://www.palettable.io/
+
+
+        
+-------------------------------------------------------------------
+
++ id, class 속성
+
+ - Global Attribute, 공용 속성이다
+  ( 모든 태그들이 다 가지고 있는 속성 )
+
+ - id 속성
+        html문서에서 각 요소들을 구분하기 위해 사용한다
+        
+        html문서에서 id들은 고유한 값으로 부여되어야 한다
+        
+        css를 적용하거나 js event 처리코드를 적용할 때 사용한다
+        
+        # 기호와 연계해서 사용한다 
+        
+ 
+ - class 속성
+        태그들을 그룹지을 때 사용한다
+        
+        여러 태그 요소들에게 같은 클래스 값을 적용하여 같은 그룹으로 표현한다
+        
+        같은 클래스값을 가진 태그들에게 공통적인 스타일을 적용할 수 있다
+        
+        ex)     <div class="red"></div>
+                <p class="red"></p>
+                
+                -> "red" 라는 이름으로 같은 스타일을 부여할 수 있다
+                
+        . 기호를 이용하여 표현한다
+        
+        띄어쓰기로 구분하여 여러 값을 부여할 수 있다
+        
+        ex)     <div class="red content extra"></div>
+        
+
++ 선택자, Selector
+
+ - HTML 문서에서 특정 요소를 선택하는 CSS 문법
+ 
+ - 선택한 요소들에게 일괄적어로 같은 스타일을 적용할 수 있다
+
++ 선택자의 종류
+
+ - 전체 선택자
+       * {
+          스마일시트;
+         }
+ 
+ - 태그 선택자
+       tagName{ }
+ 
+ - 아이디 선택자
+       #idName { }
+       
+ - 클래스 선택자
+       .className { }
+ 
+ - 복합 선택자
+ 
+ 
+ - 속성 선택자
+ 
+ 
+ - 가상 선택자
+ 
+ 
+ - 부정 선택자
+ 
+
+
+
+
+
+
+
+
+
+
+
+
