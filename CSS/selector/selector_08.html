@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>20200416 css</title>
+
+<style type="text/css">
+
+/* :root {*/
+html{
+	color:#666;
+}
+
+
+/* ************************************************************ */
+/* :nth-child(2){ color:darkgreen;  }  */
+
+/* 2번째 자식인 요소주에서 li태그인 요소 */
+/* 형제 요소들 중에서 순서를 계산한다 */
+/* 다른 태그들끼리도 순서를 포함하여 계산한다 */
+
+li:nth-child(2){ color: red; }
+
+:nth-last-child(2){ text-decoration:underline;}
+
+/* text-decoration - 글자꾸밈 */
+/* underline-밑줄 */
+
+
+ul#third li:nth-last-child(1) { text-decoration: line-through;}
+
+/* ********************************************************* */
+
+li:first-child{border:1px solid red;}
+
+li:last-child{border:1px dotted blue;}
+
+/* *********************************************************** */
+
+li:only-child{ background:tomato;}
+
+ul:only-of-type{background:yellow;}
+
+</style>
+
+</head>
+<body>
+
+
+<h1 class="title">가상클래스 선택자</h1>
+<hr>
+
+<h2>요소 순서 선택자</h2>
+<ul>
+	<li>html5</li>
+	<li>css</li>
+	<li>javascript</li>
+	<li>jquery</li>
+	<li>jsp</li>
+</ul>
+
+<ul>
+	<li class="only">html5</li>	
+
+</ul>
+
+<ul id="third">
+	<li>css</li>
+	<li>선택자</li>
+	<ul>
+		<li>id선택자</li>
+		<li>class선택자</li>
+	</ul>
+</ul>
+
+
+
+
+</body>
+</html>
