@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>20200417 layout</title>
+<style type="text/css">
+
+div { width: 200px; height:100px;}
+
+#div1 { border:1px solid green;}
+#div2 { border:1px solid red;}
+#div3 { border:1px solid blue;}
+
+#div1 { float: left;}
+#div2 {float:right;}
+
+
+.clearbox{
+	clear: both;
+	
+	height: 0;
+	width: 0;
+}
+
+/* ************************************************************* */
+
+#div3 {
+	float :left;
+}
+
+/* p{ */
+/* 	border:1px solid black; */
+
+/* } */
+#pdiv {
+/* 	div 태그 선택자에서 설정한 너비, 높이 제거 */
+	width:auto;
+	height:auto;
+	
+	border:1px solid black;
+}
+
+.clearfix::after{
+
+	content: "";
+	clear:both;
+	display:table;
+		
+	
+}
+</style></head><body>
+
+<div id= "div1"> div1 요소</div>
+
+<div id= "div2"> div2 요소</div>
+
+<div class="clearbox"></div>
+
+<div id="pdiv" class="clearfix">
+	<div id= "div3"> div3 요소</div>
+
+	<p>싸인 청춘의 사랑의 위하여, 동산에는 방황하여도, 우리 발휘하기 것은 것이다. 청춘 피는 밥을 아름답고 힘차게 이상의 청춘의 너의 칼이다.</p>
+
+</div>
+
+</body>
+</html>
