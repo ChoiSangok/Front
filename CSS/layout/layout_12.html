@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>20200420 layout</title>
+<style type="text/css">
+
+#wrap {
+/* 	<table> 처럼 동작 */
+	display:table;
+/* 	내용물(table-cell) 의 크기가 일정하도록 설정 */
+	table-layout:fixed;
+	margin:0 auto;
+}
+
+#wrap div{
+
+   width:150px;
+	height:150px;
+/* 	테이블의 내용물(table-cell,td,th)처럼 레이아웃 설정됨 */
+	display: table-cell;
+	
+/* 	수직정렬 */
+	vertical-align: middle;
+	
+/* 	내부정렬 가운데 */
+	text-align: center;
+
+}
+
+  #wrap::after{ 
+
+  content: ""; 
+  display:table; 
+  clear:both; 
+
+ } 
+/* 방법1 */
+#wrap div:nth-child(1){ background: pink; }
+#wrap div:nth-child(2){ background: red; }
+#wrap div:nth-child(3){ background: yellow; }
+#wrap div:nth-child(4){ background: purple; }
+#wrap div:nth-child(5){ background: skyblue; }
+#wrap div:nth-child(6){ background: green; }
+#wrap div:nth-child(7){ background: orange; }
+
+/* 방법2 */
+/* #a { background:red;} */
+/* #b { background:yellow;} */
+/* #c { background:#f99;} */
+/* #d { background:blue;} */
+/* #e { background:green;} */
+/* #f { background:tomato;} */
+/* #g { background:darkgreen;} */
+
+
+</style></head>
+<body>
+
+<!-- border없이 -->
+<!-- background를 각각 -->
+
+
+<div id="wrap"> <!--  980px -->
+	<div id="a" >a</div>
+	<div id="b">b</div>
+	<div id="c">c</div>
+	<div id="d">d</div>
+	<div>e</div>
+	<div>f</div>
+	<div>g</div>
+</div>
+
+
+</body>
+</html>
