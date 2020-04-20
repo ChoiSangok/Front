@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>20200420 layout</title>
+<style type="text/css">
+
+#wrap {
+	text-align:center;
+	width:980px;
+
+	text-align:center;
+}
+
+#wrap>div{
+/* 	width 맞추는 방법 */
+	width:12%;
+	height:150px;
+/*  	display:inline-block;  */
+	
+ 	float:left; 
+
+
+}
+
+  #wrap::after{ 
+
+  content: ""; 
+  display:table; 
+  clear:both; 
+
+ } 
+/* 방법1 */
+#wrap div:nth-child(1){ background: pink; }
+#wrap div:nth-child(2){ background: red; }
+#wrap div:nth-child(3){ background: yellow; }
+#wrap div:nth-child(4){ background: purple; }
+#wrap div:nth-child(5){ background: skyblue; }
+#wrap div:nth-child(6){ background: green; }
+#wrap div:nth-child(7){ background: orange; }
+
+/* 방법2 */
+/* #a { background:red;} */
+/* #b { background:yellow;} */
+/* #c { background:#f99;} */
+/* #d { background:blue;} */
+/* #e { background:green;} */
+/* #f { background:tomato;} */
+/* #g { background:darkgreen;} */
+
+
+</style></head>
+<body>
+
+<!-- border없이 -->
+<!-- background를 각각 -->
+
+
+<div id="wrap"> <!--  980px -->
+	<div id="a" >a</div>
+	<div id="b">b</div>
+	<div id="c">c</div>
+	<div id="d">d</div>
+	<div id="e">e</div>
+	<div id="f">f</div>
+	<div id="g">g</div>
+</div>
+
+
+</body>
+</html>
