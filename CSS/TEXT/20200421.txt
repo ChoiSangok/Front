@@ -67,7 +67,8 @@
  - color : 글자 색상
           색상 단위로 적용
 
-
+ - font-style: 글씨체
+          normal(기본값), italic(이탤릭), oblique(기울임)
 
 
 
