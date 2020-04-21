@@ -69,6 +69,59 @@
 
  - font-style: 글씨체
           normal(기본값), italic(이탤릭), oblique(기울임)
+          ** normal 아니면 italic 을 많이 사용함
+
+ - font-weight: 굵기
+          normal(기본값), bold, bolder, lighter
+          
+          100(얇음) - 900(굵음)
+          (100단위로 설정한다)
+          
+          200 ~ 300 lighter
+          400 ~ 500 normal
+          600 ~ 700 bold
+          800 ~ 900 bolder
+          
+ - font-variant : 글자 변형(다양성), 대소문자 스타일
+         normal - 보통 스타일
+         small-caps : 소문자를 작은 대문자로 표현
+
+ - text-align : 텍스트 정렬
+         left, right, center, justify
+         
+         블록욧에 적용하는 스타일
+         
+         블록요소의 내부 컨텐츠를 정렬한다
+         (텍스트 또는 인라인요소)
+         
+ - text-indent : 들여쓰기
+ 
+ - text-decoration : 꾸밈선
+         none - 없음
+         line-through - 취소선
+         underline - 밑줄
+         overline - 윗줄
+ 
+ - line-height : 줄 간격
+         인라인 요소의 높이로 사용된다
+         
+         1.35em이 기본값
+         
+         font-size에 상대적인 간격을 유지하도록 em으로 설정한다
+         
+         1.6em ~ 1.8em 정도로 설정하면 가독성이 좋아진다
+         
+         글자가 들어가는 영역의 높이를 나타내며, 글자 기준으로 위아래 공간이 생긴다
+         
+         
+         
+ 
+
+
+
+
+
+
 
 
 
