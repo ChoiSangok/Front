@@ -1,0 +1,157 @@
+
++ id, class 속성
+
+ - Global Attribute, 공용 속성이다
+  ( 모든 태그들이 다 가지고 있는 속성 )
+
+ - id 속성
+        html문서에서 각 요소들을 구분하기 위해 사용한다
+        
+        html문서에서 id들은 고유한 값으로 부여되어야 한다
+        
+        css를 적용하거나 js event 처리코드를 적용할 때 사용한다
+        
+        # 기호와 연계해서 사용한다 
+        
+ 
+ - class 속성
+        태그들을 그룹지을 때 사용한다
+        
+        여러 태그 요소들에게 같은 클래스 값을 적용하여 같은 그룹으로 표현한다
+        
+        같은 클래스값을 가진 태그들에게 공통적인 스타일을 적용할 수 있다
+        
+        ex)     <div class="red"></div>
+                <p class="red"></p>
+                
+                -> "red" 라는 이름으로 같은 스타일을 부여할 수 있다
+                
+        . 기호를 이용하여 표현한다
+        
+        띄어쓰기로 구분하여 여러 값을 부여할 수 있다
+        
+        ex)     <div class="red content extra"></div>
+        
+
++ 선택자, Selector
+
+ - HTML 문서에서 특정 요소를 선택하는 CSS 문법
+ 
+ - 선택한 요소들에게 일괄적어로 같은 스타일을 적용할 수 있다
+
++ 선택자의 종류
+
+ - 전체 선택자
+       * {
+          스마일시트;
+         }
+ 
+ - 태그 선택자
+       tagName{ }
+ 
+ - 아이디 선택자
+       #idName { }
+       
+ - 클래스 선택자
+       .className { }
+ 
+ - 복합 선택자
+       둘 이상의 선택자를 복합적으로 사용하는 선택자
+       
+       선택자에 포함된 요소들의 관계를 따져 태그들을 선택한다
+       
+       1. 하위(자손) 선택자 - Descendent
+       
+       E F : E의 하위요소인 F를 선택한다 
+       ex)   div p{ }
+             div 요소의 자손 중 모든 p태그 요소
+             
+       ex)   #board . title{ }
+             id가 board인 요소의 자손 중 class 가 title인 모든 요소
+             
+       2. 자식선택자 - Child
+       
+       E > F : E 요소의 자식인 F 요소 전부 선택
+
+       3. 형제 선택자 - Sibling
+       
+       E + F : E 요소의 인접형제 F 요소 ( E 요소의 바로 뒤에 오는 F 요소 한 개 )
+       
+       E ~ F : E 요소의 일반형제 F 요소 ( E 요소를 뒤따르는 모든 F요소 전부 )
+       
+       
+ 
+ - 속성 선택자
+       요소의 속성(Attribute) 를 이용하여 선택하는 선택자
+       
+       E[attr] : attr 속성을 가지고 있는 E 요소를 모두 선택 
+       
+       E[attr="val"] : attr 속성의 값이 "val" 과 같은 E 요소를 선택
+       
+       E[attr~="val"] : attr속성의 값이 "val"을 완전 포함하는 E 요소를 선택
+       ( 띄어쓰기로 구분된 단어와 같은 값이면 선택됨 ) 
+       
+       E[attr^="val"] : attr 속성의 값이 "val"로 시작하는 E 요소 선택
+       
+       E[attr$="val"] : attr 속성의 값이 "val" 로 끝나는 E 요소 선택
+       
+       E[attr*="val"] : attr 속성의 값이 "val"을 부분 포함하는 E요소 선택
+       
+       E[attr|="val"] : attr 속성의 값이 "val" 과 같거나 "val-"로 시작하는 E 요소
+       
+ 
+ - 가상 선택자, Psuedo Selector, 의사 선택자
+       
+       HTML 문서에는 실제 요소에서 존재하지 않는 대상을 선택한다
+       
+       이벤트기반, 특정 순서기반 선택자가 있다
+       
+       1. 가상 클래스 선택자(이벤트 기반)
+         
+         : hover - onenter, onleave 이벤트에 반응하여 선택
+         
+         : active - onmousedown 에 반응
+         
+         : link - <a>태그의 방문 전 상태
+         : visited - <a> 태그의 방문 후 상태
+         
+         : enable - 활성화(enable) 상태인 요소
+         : disable - 비활성화(disable)상태인 요소
+                  ( focus를 가질 수 있는 상태인지 판단해서 선택 )    
+                  
+         : checked - checked 상태인 요소 ( checkbox, radio )
+         
+         : focus - onfocus 상태인 요소 ( 포커스를 가지고 있는 요소 )
+         
+         : empty - 컨텐츠가 비어있는 요소, 자식요소가 없는 대상을 선택
+         
+       
+       2. 가상 클래스 선택자 (순서 기반)
+         
+         : root : 최상위 태그, <html>태그
+         
+         : nth-child(n) - 앞에서부터 n번째 요소
+         : nth-last-child(n) - 뒤에서 부터 n번째 요소
+         
+         : first-child - 첫번째 요소
+         : last-child - 마지막 요소
+         
+         : only-child - 유일한 자식(형제요소가 없을 때 )
+         : only-of-type - 유일한 태그 타입( 형제요소가 있더라도 단독 타입일 때 )
+         
+     
+       
+       3. 가상 요소 선택자
+
+         :: before - 태그 요소의 앞에 가상요소 추가
+         :: after - 태그 요소의 뒤에 가상요소 추가
+         
+         ::first-line - 요소의 첫번째 줄
+         ::first-letter - 요소의 첫번째 글자
+
+ - 부정 선택자
+ 
+         : not(S) - 조건 s를 만족하지 않는 요소
+         ( s는 selector를 이용하여 작성한다 )
+         
+         ex)    :not(ul) - ul 태그가 아닌 요소
