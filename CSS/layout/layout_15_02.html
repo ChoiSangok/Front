@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>20200421 layout</title>
+<style type="text/css">
+
+.imgBox{
+
+ 	width:300px; 
+ 	height:250px; 
+	
+	border: 1px solid skyblue;
+	
+	text-align:center; /* 내부정렬 */
+	padding:10px;
+	
+/* 	상대위치 지정 */
+	position:relative;
+	
+	left:100px;
+	
+/* 	요소의 그림자 설정 속성 */
+/* 	-webkit-box-shaodw:5px 5px 10px 0px #999; */
+/* 	-webkit-box-shadow: 5px 5px 10px 0px #999; */
+	box-shadow: 5px 2px 15px 10px purple;
+/* 	box-shoadow: x축이동 y축이동 흐려짐(blur) 펼치지(spread)색상 */
+
+/* 	요소의 모양 변형 */
+	-moz-transform: rotate(5deg);
+	-o-transform: rotate(5deg);
+	-webkit-transform: rotate(5deg);
+	-ms-transform: rotate(5deg);
+	transform: rotate(5deg);
+	
+
+}
+
+
+
+
+
+
+</style></head>
+<body>
+
+<!-- 머리글 -->
+<header>
+<h1>SEMANTIC TAG LAYOUT</h1>
+<h3>시멘틱 태그</h3>
+</header>
+
+<!-- 네비게이션 -->
+<nav>
+<ul>
+	<li><a href="#">&lt;header&gt; ㅌㅐ 그</a></li>
+	<li><a href="#">&lt;nav&gt; ㅌㅐ 그</a></li>
+	<li><a href="#">&lt;section&gt; ㅌㅐ 그</a></li>
+	<li><a href="#">&lt;article&gt; ㅌㅐ 그</a></li>
+	<li><a href="#">&lt;footer&gt; ㅌㅐ 그</a></li>
+
+</ul>
+</nav>
+
+<hr>
+
+<section>
+<article>
+	<p>내용물을 ㅈ거는 곳!</p>
+	<div class="imgBox">
+		<img alt="데이브" src="../layout/강아지.jpg" width=300 height=200/>
+	<br>
+	      section태그 안에 article 태그로 표현하고 있다!
+	</div>
+</article>
+</section>
+
+<hr>
+
+<footer style="font-size: 0.8em; text-align: center;">
+powered by sangok<br>
+sponsored by sangok<br>
+&copy; lacuna
+</footer>
+
+
+
+
+
+
+
+</body>
+</html>
+
+
+
