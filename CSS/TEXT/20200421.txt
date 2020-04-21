@@ -115,19 +115,43 @@
          
          
          
++ font-family, 서체
+ - 글꼴 ( == font )
  
+ - 서체를 지정하는 스타일 속성
+ 
+ - 글꼴에 영향을 준다
+ 
+ 
++ 서체의 종류
 
+      serif : 돌출선이 들어간 서체
+       한글 글꼴 : 바탕체, 궁서체
+       영어 글꼴 : Georgia, Times New Roman
+     
+      sans-serif : sans 는 '없다' 는 뜻, 돌출선 ( serif )가 없는 서체 
+       한글 글꼴 : 돋움, 굴림, 고딕, 나눔 고딕, 맑은 고딕
+       영어 글꼴 : Arial, Helvetica
+      
+      monospace : 고정 폭 서체 , 오타구분이 쉬움, 코딩 폰트
+       대표 서체 : Consolas
+      
+      cursive : 커브가 적용된 서체, 필기체
+      
+      fantasy : 특이한 모양을 가진 서체, 개성있는 서체
+      
 
++ 서체를 CSS 로 설정하는 방법
+ - font-family 는 글꼴을 명시하거나, 서체를 지정할수 있다
+ 
+ - font-family 의 설정값으로 설정한 서체나 글꼴을 여러 개 지정할 수 있다
+ ( 각 항목은 , 로 구분 ) 
+ 
+ - 설정항목은 순서대로 웹페이지의 적용된다
 
-
-
-
-
-
-
-
-
-
+ - font-family: "돋음", Dotum, "굴림", Gulim, Arial, Helvetica, sans-serif;
+ 
+ 
 
 
 
