@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>pizza quiz</title>
+<style type="text/css">
+
+ form { 
+  width:300px; 
+  background:#ccc;
+ } 
+
+
+</style>
+
+</head>
+<body>
+
+
+
+<form action=" "method="post">
+
+<!-- 고객명 -->
+<label>고객명: <input type="text" name="username" size="18"/></label>
+<br><br>
+
+<!-- 전화번호 -->
+<label>전화번호: <input type="tel" name="userphone"/></label>
+<br><br>
+
+<!-- 이메일 -->
+<label>이메일 : <input type="email" name="email"/></label>
+<br><br>
+
+<!-- 피자사이즈 -->
+<fieldset>
+<legend>피자사이즈</legend>
+
+<input type="radio" name="small" />Small<br>
+<input type="radio" name="medium" />Medium<br>
+<input type="radio" name="large" />Large
+
+</fieldset>
+<br>
+
+<!-- 토핑선택 -->
+<fieldset >
+<legend>토핑선택</legend>
+
+<input type="checkbox" name="topping" />베이컨<br>
+<input type="checkbox" name="topping" />치즈<br>
+<input type="checkbox" name="topping" />양파<br>
+<input type="checkbox" name="topping" />버섯
+
+</fieldset>
+<br><br>
+<!-- 배송시간 -->
+<label>희망배송시간 : </label>
+<input type="time" name="dtime" min="10:00" max="23:00" />
+<br><br>
+
+<!-- 요청사항 -->
+
+<!-- submit 버튼, <form> 에서 선택한 내용을 전달함 -->
+<label>배송시요청사항 : </label>
+<textarea name="commnet" rows="3" cols="20"/></textarea>
+<br><br>
+<input type="submit" value="주문하기"/>
+
+<!-- 그냥버튼 -->
+<!-- <input type="button" value="주문하기"/> -->
+<!-- <button type="button">주문하기</button> -->
+
+</form>
+</body>
+</html>
+
+
+
+
+
