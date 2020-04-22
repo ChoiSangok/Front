@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>20200422 menu</title>
+<!-- 스타일 -->
+<style type="text/css">
+/* 메인메뉴 */
+
+.nav{
+/* 	기본 리스트스타일(disc) 없애기 */
+	list-style-type: none;
+	
+/* 	기본 여백 제거하기 */
+	padding:0;
+	margin: 0;
+	
+}
+/* 메인메뉴 메뉴항목 */
+.nav > li{
+/* 	수평으로 일렬로 배치하기 */
+
+	float:left;
+	
+/* 	높이조절 */
+/* 	padding: 20px 0; */
+ 	line-height:40px; 
+ 	
+/*  배경색 지정 */
+ 	background: skyblue;
+ 	
+/*  	오른쪽 테두리 설정 -> 메뉴 항목 구분하기 */
+ 	border-right:5px solid white;
+ 	
+/*  	내용물이 <li>항목보다 크면 보이지 않도록 잘라내기 */
+/* 	<li> 보다 <a>영역이 클 때 적용하면 좋다 */
+/*  	overflow:hidden; */
+ 	
+/*  	absolute 자식요소의 기준위치로 설정하기 */
+ 	position: relative;
+ 
+}
+
+/* 메인메뉴항목 텍스트 (링크) */
+.nav >li>a{
+
+	display:block;
+/* 	글자색상  */
+	color: white;
+	
+/* 	글자 꾸밈선 없애기 */
+	text-decoration: none;
+	
+/* 	글자 스타일 지정 */
+
+	font-size: 30px;
+	font-weight:bolder;
+	font-family: sans-serif; 
+	
+/* 	내부여백( 링크가 클릭되는 영역) */
+	padding:10px 15px;
+	
+/* 	외부여백(링크 클릭 안되는 영역, 다른 <a>와 구분되도록 만든다) */
+	margin:0 3px;
+}
+
+/* <a>태그 영역에 마우스를 올렸을 때 */
+
+.nav > li > a:hover{
+	
+/* 	css변화 속도 조절 */
+	-webkit-transition: all 2s;
+	-moz-transition:all 2s;
+	-o-transition:all 2s;
+	transition: all 2s;
+/* 	transition : color 2s; */
+
+	
+/* 	색상변경 */
+	color:purple;
+
+}
+
+/* 서브메뉴 */
+
+
+
+.nav > li > ul {
+
+/* 	html ㄱㅖ층구조에서 빼는 설정 */
+/* 	부모요소인 <li> 태그의 컨텐츠 영역을 차지하지 않도록 만들기 */
+	position: absolute;
+	
+/* 	서브메뉴 위치조절 */
+	left:0;
+	
+/* 	기본 리스트 스타일 제거하기 */
+	list-style-type: none;
+	
+/* 	기본 여백 제거하기 */
+	padding: 0;
+	margin: 0;
+	
+/* 	서브메뉴의 너비 */
+	width:160px;
+
+}
+
+
+/* 서브메뉴 항목 */
+
+.nav >li > ul> li{
+	
+/* 	배경색 */
+/*  	  */
+	background: orange; 
+/* 	서브메뉴 텍스트 들여쓰기 */
+	padding-left:10px;
+
+
+
+
+/* 	평소화면에서 안보이도록 설정하기 */	
+/* 	방법1 : display 하지 않는다*/
+/* 	display:none; */
+
+/* 	방법2 : 내용물의 모든 높이, 크기를 0으로 설정한다 */
+ 	line-height: 0; 
+ 	height: 0; 
+ 	font-size: 0; 
+ 	
+
+
+}
+
+/* 메인메뉴 항목에 마우스를 갖다대면, */
+/* 	자식요소인 서브메뉴 항목을 보이도록 설정한다 */
+.nav > li:hover > ul>li{
+
+/* 	방법1에 대한 처리 */
+/* 	display:list-item; */
+
+	
+/* 	방법2에 대한 처리 */
+/* 	line-height: inherit; */
+/* 	height: inherit; */
+/* 	font-size: inherit; */
+	line-height:40px;
+	height: 40px;
+	font-size: 20px;
+/* 	css 변화속도조절 */
+/* 	-webkit-transition: all 2s; */
+/* 	-moz-transition:all 2s; */
+/* 	-o-transition:all 2s; */
+/* 	transition: all 2s; */
+
+	transition:height 2s;
+	
+
+}
+
+/* 서브메뉴의 링크 텍스트 */
+.nav>li>ul>li>a{
+	
+/* 	배경색 */
+
+	background: #DCEBFF; 
+
+/* 	글자색상 */
+	color: #333;
+	
+/* 	<a> 태그 꾸밈선제거 */
+	text-decoration: none;
+	
+/* 	<li>항목 영역을 꽉 채우도록 만듦 */
+	display: block;
+
+
+}
+
+.nav>li>ul>li>a:hover{
+
+ 	color:#c00;
+/* 	background: 색깔 넣어주기 */
+	background:#D2D2FF;
+	
+	-webkit-transition: all 2s;
+	-moz-transition:all 2s;
+	-o-transition:all 2s;
+	transition: all 2s;
+
+}
+
+
+
+
+
+
+</style>
+
+</head>
+<body>
+   <h2> 2depth 메뉴</h2>
+   <hr/>
+   
+
+   <ul class="nav">
+   
+
+      <li><a href="#">Home</a></li>
+      
+
+      <li>
+         <a href="#">웹 개발팀</a>
+         <ul>
+            <li><a href="#">웹디자이너</a></li>
+            <li><a href="#">웹퍼블리셔</a></li>
+            <li><a href="#">웹개발자</a></li>
+            <li><a href="#">웹엔지니어</a></li>
+         </ul>
+      </li>
+      
+
+      <li>
+         <a href="#">게시판</a>
+         <ul>
+            <li><a href="#">공지사항</a></li>
+            <li><a href="#">자유게시판</a></li>
+         </ul>
+      </li>
+      
+
+      <li>
+         <a href="#">문의하기</a>
+      </li>
+   </ul>
+
+
+
+</body>
+</html>
