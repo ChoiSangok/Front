@@ -1,0 +1,52 @@
++MDN, Mozilla Developer Network 자바스크립트 레퍼런스
+  - https://developer.mozilla.org/ko/docs/Web/JavaScript
+
+  - 구글에 'mdn javascript' 검색
+
++ JS 형변환
+
+ - 자동 형변환
+          Number + String -> String
+            ex) 123 + "Hello" -> "123Hello"
+            
+          Boolean + String -> String
+            ex) true+"HI" -> "tureHI"
+            
+          Boolean + Number -> Number
+            ex) true + 5 -> 6
+                true + true + 5 -> 7
+                (true ==1 false ==0)
+          
+
+ - 강제 형변환
+          문자 -> 숫자
+          
+          parseInt( "숫자형태" )
+          parseFloat( "숫자형태" )
+          Number( "숫자형태" )
+          
+          
+          숫자 -> 문자
+          String( 숫자 ) 
+          숫자데이터.toString(n)
+          숫자데이터.toFixed(n)
+          
+          
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
