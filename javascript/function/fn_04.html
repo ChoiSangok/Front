@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>202004227 fn_04</title>
+<script type="text/javascript">
+
+//스코프, Scope
+//변수의 유효범위
+
+// console.log(data); //error,선언되지 않은 함수
+console.log(num);
+
+//글로벌(global) 스코프, 전역 스코프
+
+var num=10; //전역변수, Global Variable
+
+//호이스팅(Hoisting)
+console.log(num); //에러나지않음, 변수가 선언된 상태, undefined
+
+//------------------------------------------------
+
+
+function func(){
+	console.log(num); //전역 변수 출력
+	
+	//호이스팅(Hoisting)
+	console.log(func_var)
+	
+	var func_var=20;// 지역변수 , Local Variable
+	
+	console.log(func_var);
+}
+func();
+
+// console.log(func_var); //error, func() 함수를 벗어나서 사용 불가
+console.log("----블록 지역 스코프------")
+// { }블록
+{
+	//블록 지연 스코프
+	
+	
+	var block_var=30;
+	console.log(block_var);
+
+}
+console.log(block_var);
+
+//---------------------------------------------------------------------------
+
+var data1="alice";
+console.log(data1);
+
+var data1 = "Bob";
+console.log(data1);
+// var로 변수를 선언하면 이전에 선언되었던 이름이어도 사용할 수 있다
+//에러안남 이전에 생성된 변수를 가져와서 사용한다
+
+//----------------------------------
+
+//호이스팅(Hoisting)
+// console.log(data2); // error, let 변수는 초기화 전에 접근 불가
+
+
+let data2="clear"
+console.log(data2);
+
+// let data2="dave" //error,. 변수이름 중복선언 불가
+
+data2="Dava";
+console.log(data2);
+
+//----------------------------------
+
+// { } 블록
+{
+	//블록 지역 스코프
+	
+	let block_let;
+	console.log(block_let)
+}
+
+// console.log(block_let) //error, 블록 스코프 밖에서 사용 불가
+
+//----------------------------------
+
+for( var i=0;i<5;i++){
+}
+console.log(i) //var 변수는 function 스코프 제한
+
+for( let j=0;j<5;j++){
+}
+//console.log(j) //error, let 변수는 block스코프 제한
+
+//const: 상수 생성 키워드
+//const data3; //error, 선언과 동시에 초기화 필수 ! ! ! ! ! ! !
+
+const data3=50;
+console.log(data3);
+
+data3=60; //error const변수는 상수! ( 값 대입 불가)
+
+
+
+
+</script>
+</head>
+<body>
+
+</body>
+</html>
+
+
+
+
+
+
+
