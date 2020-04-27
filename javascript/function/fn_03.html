@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>20200427 fn_03</title>
+<script type="text/javascript">
+
+function hello(){
+	console.log("안녕하세요")
+}
+
+function thanks(){
+	console.log("감사해요!")
+}
+
+// ------------------------------
+
+function action( fn ){
+	fn();
+	
+	return fn;
+	
+}
+
+// action(123);
+
+action(hello)
+action(thanks)
+
+var f = action(hello);
+
+f();
+
+console.log("------------------------")
+
+action(thanks)()	
+
+action(action(action(action(hello))))()
+
+
+
+
+
+
+</script>
+</head>
+<body>
+
+</body>
+</html>
