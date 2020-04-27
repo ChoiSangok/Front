@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>20200427 function01</title>
+<script type="text/javascript">
+
+// 함수,  function
+
+//함수 정의 코드
+function func(){
+	//동작 코드
+	console.log("함수입니다");
+	
+}
+
+
+//함수 호출 코드
+func();
+func();
+func();
+
+console.log("-----------------")
+
+var func2;
+
+// 변수에 이름없는 함수(익명함수)를 대입
+func2=function(){
+	console.log("이것도함수다")
+	
+}
+
+// 함수호출
+func2();
+console.log("-------------")
+
+var func3=func;
+var func4=func2;
+
+func();
+func2();
+func3();
+func4();
+
+console.log("---------------")
+console.log(typeof(func))
+console.log(typeof(func2))
+
+
+console.log("------func1---------")
+console.log(func)
+console.log("------func2---------")
+console.log(func2)
+
+console.log("----------")
+console.log(func())
+console.log(func2())
+
+</script>
+</head>
+<body>
+
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
