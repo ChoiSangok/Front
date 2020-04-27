@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>20200427 javascript</title>
+<script type="text/javascript">
+
+// 변수 선언
+var data;
+console.log(data)
+
+//선언하지도 않은 변수
+// console.log(ddd) // Error
+
+console.log("--------------")
+
+if( data == undefined){
+	console.log("data 변수가 초기화 되지 않았음")
+	
+}
+
+if(data == null){
+	console.log("data 변수가 null 이다")
+	console.log("참조대상이 없다")
+	
+	
+}
+
+console.log("---------------")
+
+
+if( !data ){
+	console.log("data의 값이 fasle")
+	
+}
+
+if(!undefined){
+	console.log("data 의 값이 false")
+}
+
+console.log("---------------")
+
+console.log("data== false 의 결과: ")
+console.log(data==false)
+
+console.log("---------------")
+
+if(data==undefined){
+	console.log("==연산, data변수가 초기화되지 않음")
+	
+}
+
+if(data==null){
+	
+	console.log("== 연산, data변수가 참조하고 있는 대상이 없음")
+}
+
+console.log("---------------")
+
+// == , 기호 두개짜리 연산 - Abstract Equality
+// 명세서에 정의되어있는 순서에 따라 비교연산을 수행한다
+// 데이터타입이 달라도 비교결과가 나온다 ( 결과는 명세서 확인해야함 )
+
+// ===, 기호 세개짜리 동등 비교 연산 - Strict Equality
+// 데이터타입이 같은지 먼저 검사하고 데이터타입이 같아야만 비교함
+// 데이터타입이 다르면 무조건  false
+
+
+console.log("---------------")
+
+console.log(!undefined)
+console.log(!null)
+
+// ! 연산자를 사용하며 ㄴtrue가 반환되는 데이터
+// false, null, undefined , NaN, 0,"", ...
+
+
+
+
+
+
+
+
+
+
+</script>
+</head>
+<body>
+
+</body>
+</html>
