@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script type="text/javascript">
+
+var result;//전역변수
+
+function add( n1, n2 ){ //덧셈
+   
+   result = n1 + n2;
+   
+}
+
+function print(){ //출력
+   
+   console.log(result);
+   
+}
+
+
+add(100, 200)
+print()
+
+console.log("--------")
+
+//콜백 함수, callback function
+//         직접 호출해서 동작하는 함수가 아닌
+//         외부의 동작에 의해서 실행되는 함수
+
+//         남(다른 시스템, 함수 등등)이 호출해주는 함수
+
+function sum(n1, n2, fn){
+   
+   var res = n1 + n2;
+
+   fn(res);
+}
+
+// 결과값을 console로 출력
+function display( data ){
+   
+   console.log("결과값 : " + data);
+   
+}
+//콜백함수를 전달하며 호출하기
+sum(11, 22, display);
+
+//결과값 alert창으로 출력
+function alertResult( data ){
+   alert( "결과값은" + data + "입니다.")
+   
+   
+}
+// 콜백으로 사용될 함수를 다르게 적용하여 동작(여기선 결과출력)
+// 매번 다르게 지정할 수 있다.
+sum( 111, 222, alertResult)
+
+sum(555,666,function(data){
+	
+	document.write("<h1>"+ data+"</h2>")
+	
+})
+
+console.log("--------")
+
+var write=function(data){
+	document.write("<h1>"+data+"</h1>")
+
+}
+sum(888,999,write);
+
+
+
+
+
+
+
+
+
+
+
+</script>
+</head>
+<body>
+
+</body>
+
+</html>
