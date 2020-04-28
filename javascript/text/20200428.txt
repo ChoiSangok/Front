@@ -1,0 +1,18 @@
++ 타이머(Timer) 함수
+
+ - setInterval( func, millis ) : timerid
+ 
+        지정된 밀리초(millis) 마다 func함수를 반복적으로 실행한다
+        
+        타이머객체의 id를 반환한다
+ 
+ - setTimeout( func, millis ) : timerid
+ 
+        지정된 밀리초(millis) 이후 func함수를 한 번 실행한다
+        
+        타이머객체의 id를 반환한다
+        
+ - clearInterval( timerid ) : undefined
+ 
+        지정된 타이머객체를 즉시 종료시킨다
+        ( setInterval, setTimeout 모두 종료 가능 )
