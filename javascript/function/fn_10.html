@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>20200428 javascript</title>
+<script type="text/javascript">
+
+
+var cnt=0; //전역변수
+function countUp(){
+	
+	return ++cnt;
+	
+	
+}
+
+console.log(countUp( ));
+console.log(countUp( ));
+console.log(countUp( ))
+console.log(countUp( ))
+console.log(countUp( ))
+
+console.log("--------")
+
+
+function countUp2(){
+	var cnt2 =0; //지역변수
+	
+	return ++cnt2;
+	
+}
+
+console.log(countUp2())
+console.log(countUp2())
+console.log(countUp2())
+console.log(countUp2())
+console.log(countUp2())
+
+//------count3------------------
+console.log("---------");
+function countUp3(){
+	var cnt3=0; //자유변수,  free variable
+	
+	return function (){
+		return ++cnt3; //closure 이라고함!
+	}
+	
+}
+//closure
+
+var f= countUp3();
+console.log(f());
+console.log(f());
+console.log(f());
+console.log(f());
+console.log(f());
+
+f=null; //참조대상 없애기
+
+// console.log(f()); //error
+
+
+//클로저, Closure
+//	함수 스코프의 외부로 반환된 내부함수가
+//	자신이 선언(정의)되었을 때의 스코프(환경, 상태)를 기억하는것 ( lexical scope   )
+
+//	함수 스코프가 종료되었더라도 클로저함수를 호출하면
+//	클로저함수가 선언되었을 때 만드어진 스코프에 접근할 수 있다
+
+// 클로저 함수에 의해 접근할 수 있는 변수를 자유변수(Free Variable)
+// 이라고 한다
+
+// 자유변수는 새롭게 만들어진 것이 아니라 최초의 변수공간을
+// 계속 사용하는 것이므로 값의 변화가 적용되고, 최신값으로 유지된다
+
+
+
+
+
+</script>
+</head>
+<body>
+
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
