@@ -1,0 +1,59 @@
+z<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>20200428 function </title>
+<script type="text/javascript">
+
+var num = 111; //전역변수
+
+//전역변수를 이용한 연산
+function fn1(){
+	num +=11;
+}
+
+//전역변수를 이용한 출력
+function fn2(){
+	console.log(num);
+}
+
+// 함수 호출
+fn1();
+fn2();
+
+hello();
+
+
+function hello(){
+	var num=222; //지역변수
+	
+	console.log("안녕 ! " + num)
+	
+	
+	//내부함수
+	function inner(){
+		var num = 333; //내부함수의 지역변수
+		
+		console.log("반가워요 !" + num)
+		
+	
+	}
+	inner();
+	
+}
+
+hello();
+
+// inner(); //error inner 함수가 정의돈 스코프를 벗어났음
+
+
+
+
+
+
+</script>
+</head>
+<body>
+
+</body>
+</html>
