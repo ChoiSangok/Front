@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>20200428 function_07</title>
+<script type="text/javascript">
+
+function hello(){
+	console.log("hello")
+}
+hello();
+
+//------------------------------------
+
+//1000 밀리초(1초) 마다 hello 함수 호출하기
+var tid = setInterval(hello, 1000);
+
+//------------------
+
+//3000밀리초 (3초))이후에 주어진 함수 호출하기
+setTimeout(function(){
+	alert("hihi");
+	
+},3000);
+//--------------------------
+
+function stop(){
+	clearInterval( tid )
+}
+
+//5000밀리초 뒤에 tid타이머를 종료시킨다
+setTimeout(stop,5000)
+
+</script>
+</head>
+<body>
+
+</body>
+</html>
