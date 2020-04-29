@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>20200429 javascript dom</title>
+<script type="text/javascript">
+//dom 객체 이용 방법 2
+
+//dom 트리가 완성된 이후 수행할 코드로 document. 객체를 사용한다
+window.onload = function(){ //callback
+	console.log("----window.onload----")
+	var e= document.getElementById("header")
+	console.log(e)
+	
+	e.style.color="darkgreen"
+	
+};
+
+//load - 메모리에 적재된 상황
+// onload - load이벤트가 발생했을 때 실행될 코드를 정의
+
+// 	(이벤트 리스터 - 이벤트가 발생하면 실행되는 코드)
+// 	(이벤트 리스너 == 이벤트 처리코드 == 이벤트 핸들러 )
+
+//  window.onload
+//  html 코드를 전부 읽고나서 메모리에 dom객체를 전부 적재시킨 시점에
+//  수행할 코드를 작성하는 속성
+
+
+//		-> DOM 트리가 완성된 시점을 뜻한다
+//-----------잘못된 dom객체 사용법 ---------
+
+// 문서객체를 저장하고 있는 DOM 트리를 구성하기 전에
+// document 를 이용하여 노드에 접근하면 안된다
+
+// DOM 트리는 HTML문서 전체를 브라우저가 읽은 이후에 완성된다
+
+// document. 을 이용하여 DOM 트리에 접근하려면 DOM트리가 완성된
+// 이후에 코드가 실행되도록 만들어야한다
+
+
+// id 가 "header" 인 요소노드를 얻어오기
+var h = document.getElementById("header");
+
+//요소노드 출력하기
+console.log(h) //null 나옴
+
+//------------------------
+
+
+</script>
+</head>
+<body>
+<script type="text/javascript">
+// 방법 3 : 이벤트 처리코드를 이용하여 document 객체를 이용한다
+function chgBgYellow(){
+	console.log("----mouseenter----")
+	
+	var y = document.getElementById("header")
+	y.style.backgroundColor="yellow";
+}
+
+function chgBgNone(){
+	
+	console.log("----mouseleave----")
+	
+	var n= document.getElementById("header")
+	
+// 	n.style.backgroundColor="white" //배경색으 ㄹ흰색으로 적용
+	n.style.background="none" //배경관련 설정을 없앤다
+	// 
+	
+}
+</script>
+
+
+<!-- <h1 id="header"  -->
+<!-- 	onmouseenter="console.log('enter')" -->
+<!-- 	onmouseleave="console.log('leave')">HEADER TEXT</h1> -->
+
+<!-- mouseenter - 요소 위로 마우스가 올라갔을 때 발생하는 이벤트 -->
+<!-- mouseleave - 요소 위에서 마우스가 벗어났을 때 발생하는 이벤트 -->
+
+
+<h1 id="header" 
+	onmouseenter="chgBgYellow()"
+	onmouseleave="chgBgNone()">HEADER TEXT</h1>
+<script type="text/javascript">
+
+//------------------------------------------------------
+
+
+
+
+
+//dom 객체 이용 방법1
+// </body> 닫는 태그 직전에  <script> 태그를 이용하여 작성한다
+
+console.log("--- body 태그 닫기 직전 ----")
+
+var h = document.getElementById("header");
+console.log(h)
+
+//테두리 적용하기
+h.style.border = "3px solid red";
+
+document.getElementById("header").style.color="blue";
+
+console.log(h.style.border)
+console.log(h.style.color)
+
+
+</script>
+</body>
+</html>
+
+
+
+
+
