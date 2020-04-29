@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>20200429 javascript</title>
+<script type="text/javascript">
+// http://www.localhost:8088/dom/bom.html
+//전역변수
+var data=123;
+console.log(data);
+
+
+console.log(window.data);
+
+window.setTimeout(function(){
+	
+	alert("윈도우객체!")
+},200)
+
+
+// window.open( url, name, option) : windowid
+//			url - 팝업 주소
+//			name - 팝업창의 이름 설정
+//			option - 팝업창 설정
+
+
+// open("http://www.naver.com","네이버")
+// open("http://www.naver.com","_blank") //2번째 인자로 "_blank" -새ㅑ창
+// open("http://www.naver.com","_self") //2번째 인자로 "_self" - 현재창
+
+//open() 함수의 반환값은 윈도우아이디( 윈도우를 구분하는 값)
+
+// var wid = open("http://www.naver.com","_blank")
+
+//100밀리초 후에 팝업창(새창)닫기
+
+// setTimeout(function(){
+// 	//윈도우 아이디를 이용한 창닫기
+	
+// 	win.close()
+
+	
+// },100)
+
+
+console.log("----navigator------")
+
+console.log(navigator.userAgent) //브라우저 + 운영체제의 정보
+console.log(navigator.language) //언어권 정보, locale
+console.log(navigator.vendor) //브라우저 벤더사, 배포하는 회사
+
+console.log("----location-----")//URL 정보 객체
+
+console.log(location.host) //도메인주소
+console.log(location.hostname) //호스트네임
+console.log(location.port) //호스트 네임
+
+console.log(location.pathname) //자원(address)주소
+
+console.log(location.href) //전체 url 정보
+
+// location.href="/function/fn_10.html" //페이지이동
+// <a> 태그의 href속성을 설정하고 해당 링크를
+// 클릭을 한 것과 같은 반응을 보인다
+
+// ----> 페이지 이동
+
+// 자바스크립트 코드를 이용해서 페이지 이동을 하려면 
+// location.href 의 값을 변경한다
+
+console.log("----history-----") //인터넷 사용기록 객체
+
+// history.back() //이전으로 가기 ( 뒤로가기, 이전 방문 페이지로 이동)
+
+// history.forward(); // 다음으로 가기 ( 앞으로가기, 다음 방문페이지로 이동)
+
+// history.go(n)
+// n값은 정수, 히스토리페이지 이동 개수를 표현한다
+// 0이면 현재페이지
+// 양수면 다음으로 가기
+// 음수면 이전으로 가기
+
+// ex) history.go(-1) - 이전으로 가기
+
+
+console.log("----screen----") //모니터 정보 객체
+
+//브라우저 최대화했을 때 차지하는 영역의 크기( 픽셀)
+// -> 브라우저가 위치한 모니터의 크기
+// -> 시작메뉴 사이즈( 높이 40px) 제외된다
+
+console.log(screen.availWidth)
+console.log(screen.availHeight)
+
+
+console.log("------")
+//모니터의 해상도 크기 (시작메뉴크기 무시)
+console.log(screen.width)
+console.log(screen.height)
+
+
+console.log("---outer---")
+// 브라우저의 외곽 테두리 크기
+
+console.log(window.outerWidth)
+console.log(window.outerHeight)
+
+console.log("---inner---")
+// 브라우저 내부(<body> 가 보여지는 곳) 의 크기
+//  메뉴, 탭, 북마크 , 스크롤 영역이 제외되고 계산된다
+//  whale 브라우저에서는 제대로 동작안함
+//  몇몇 브라우저에서 제대로 동작하지 않을 수 있음
+
+
+console.log(window.innerWidth)
+console.log(window.innerHeight)
+
+console.log("------")
+console.log( window.screenX)
+console.log( window.screenY)
+
+
+//IE
+console.log(window.screenLeft)
+console.log(window.screenTop)
+
+//IE8 이하만 아니면 두 가지 모두 사용 가능
+
+
+
+
+</script>
+</head>
+<body>
+
+</body>
+</html>
+
+
+
+
+
+
