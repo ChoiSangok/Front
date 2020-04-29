@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>20200429 javascript dom2</title>
+<script type="text/javascript">
+
+window.onload= function(){
+	
+	//h1 요소 생성
+	var h = document.createElement("h1");
+	
+	// 객체 생성 확인
+	console.log(h);
+	
+	//텍스트 노드 생성 - "Hello Dom"
+	var text = document.createTextNode("hello Dom")
+	
+	//텍스트 노드 생성 확인
+	console.log(text)
+	
+//----------------------------------------------------------
+	// h1 요소노드에 텍스트노드를 자식으로 추가하기 
+	h.appendChild(text);
+	
+	//<body> 태그에 h1 요소 노드를 자식으로 추가하기
+	document.body.appendChild(h)
+	
+	// ** document.body
+	// <body> 요소 노드
+	// document 객체에서 <body> 는 특별히 키워드로 저장하고 있음!
+	
+	//------------------------------------------------------
+	
+	
+	var abc = document.createElement("abc");
+	var t= document.createTextNode("test");
+	
+	abc.appendChild(t);
+	
+	document.body.appendChild(abc);
+	
+	abc.style.color="red";
+	abc.style.border="3px solid darkgreen";
+	abc.style.fontSize='40px';
+	
+	
+// 	예시 소스--------------------------------------
+
+	var pTag = document.createElement("p") //p태그 요소 생성
+    document.body.appendChild(pTag) // <body>에 p 요소 추가
+    
+	 var div=document.createElement("div") //div 요소 생성
+    var t = document.createTextNode("Hello") //텍스트 생성
+    
+    div.appendChild(t) //<div> 에 텍스트 추가하기
+    document.body.appendChild(div) //<body> 에 <div> 추가
+    
+    div.style.color="red";
+    div.style.color="blue";
+	
+	
+};
+
+
+
+
+
+
+
+
+
+</script>
+</head>
+<body>
+
+</body>
+</html>
