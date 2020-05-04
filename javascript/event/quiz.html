@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>구구단퀴즈</title>
+<script type="text/javascript">
+
+	function setting(){
+
+		var ran1 =Math.floor(Math.random()*8+1) + 1;
+		var ran2 = Math.floor(Math.random()*9) + 1;
+		
+		leftnum.value=ran1;
+// 	document.getElementById("leftnum").value=ran;
+		rightnum.value=ran2;
+	
+		con.value="";
+}
+	
+	
+	function myClick(){
+		var leftinput = leftnum.value;
+		var rightinput= rightnum.value;
+		var temp =leftinput * rightinput;
+		var result =con.value;
+
+		if(temp==result){
+			alert("정답!");
+ 			suc.value=parseInt(suc.value)+1;
+			
+		}
+		else{
+			alert("오답! 정답은 "+temp+"입니다!");
+			unsuc.value=parseInt(unsuc.value)+1;
+		}
+		
+		setting();
+		
+	}
+
+</script>
+</head>
+<body>
+
+<h1>구구단 퀴즈</h1>
+<hr>
+
+<input type="text" id="leftnum" readonly="readonly" > 
+X 
+<input type="text" id="rightnum" readonly="readonly">
+<br>
+<br>
+= <input type="text" id="con"> <button id="btnOk" onclick ="myClick()">결과확인</button>
+<br><br>
+
+정답수 : <input type="text" id= "suc" value="0" readonly="readonly"><br><br>
+오답수 : <input type="text" id= "unsuc" value="0" readonly="readonly">
+
+<script type="text/javascript">
+setting();
+</script>
+</body>
+</html>
