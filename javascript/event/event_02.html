@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>20200504 javascript event_02</title>
+<script type="text/javascript">
+
+window.onload=function(){
+	
+	console.log(btnOk)
+	
+	btnOk.onclick = function() {
+		alert("clicked!!!")
+		
+	}
+	
+	btnOk.onmouseover=function(){
+		console.log("mouseover");
+		
+	}
+	
+	//------------------------------------------------
+	
+	// 테스트 버튼
+	var btn=document.getElementById("btnTest");
+	
+	
+	btn.onkeydown = function(){
+		console.log("keydown")
+	}
+	
+	
+	btn.onkeypress=function(){
+		console.log("keypress")
+	}
+	
+	
+	btn.onkeyup= function() {
+		console.log("keyup")
+	}
+	//------------------------------
+	
+	
+	// 포커스를 얻었을 때
+	inputTest.onfocus=function(){
+		btnOk.innerHTML="<h1 style='color:red;'>FOCUS</h1>"
+	}
+	
+	
+	// 포커스를 잃었을 때
+	inputTest.onblur=function(){
+		btnOk.innerHTML="<h1 style='color:blue;'>BLUR</h1>"
+	}
+	
+	
+	
+	
+};
+
+
+
+
+
+
+</script>
+</head>
+<body>
+
+<button id="btnOk">확인</button>
+
+<button id="btnTest">테스트</button>
+
+<input type="text" id="inputTest"/>
+
+
+</body>
+</html>
