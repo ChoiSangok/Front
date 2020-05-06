@@ -101,8 +101,18 @@
         //dom 객체 접근 가능
       });
  
- 
 
++ jQuery 노드객체 찾기( 얻어오기 )
+
+ - $("CSS셀렉터")
+ 
+ - $( jsDOM객체 )
+    
+     ** 순수JS API 를 적용할 수 있는 객체를 jsDOM 객체 
+     ** jQuery API 를 적용할 수 있는 객체를 jqDOM 객체
+     
+     ** 순수JS API를 사용할 수 있는 DOM 객체와
+     jQuery API를 사용할 수 있는 DOM 객체의 형식이 다르다 
 
 
 
