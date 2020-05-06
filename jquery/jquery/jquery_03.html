@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>20200506 javascript jquery_03</title>
+
+<!-- jquery 2.2.4 min 설치 -->
+<script type="text/javascript"
+src="https://code.jquery.com/jquery-2.2.4.min.js"></script>
+
+<script type="text/javascript">
+// jQuery 스타일로 dom 사용하기
+$(document).ready(function(){
+	
+	var jQueryP1=$("#p1");
+	var jsP1=document.getElementById("p1"); //js
+	//var jsP1=p1; //츅약코드
+	
+	//jquary api 를 따로 배워야 함ㅁ
+	
+	console.log(" ----jquery-----")
+	console.log(jQueryP1)
+	
+	console.log("----JS----")
+	console.log(jsP1)
+	
+	//-------------------------------------
+	//순수 JS DOM 객체를 이용한 스타일 (CSS) 지정
+	jsP1.style.color="red";
+	
+	// jQuery dom 객체를 이용한 스타일 (CSS) 지정
+	jQueryP1.css("border","2px solid #ccc")
+	
+	//------------------------------------------
+	
+	//jQuery DOM 객체에 순수JS 구문을 적용하기
+	
+// 	jQueryP1.style.background = "tomato";
+	
+// 	jQuery 
+	//------------------------------------------
+	
+	console.log("--- $('p')----")
+	console.log( $('p'))
+	
+	//요소가 3개여도 css() 함수는 한꺼번에 적용해준다
+	$('p').css("background","yellow")
+	
+	//------------------------------------------
+	
+	var p3 = document.getElementById("p3") //jsDOM 객체
+	
+	var $p3 = $('#p3') //jQuery DOM 객체
+
+	console.log("----js----")
+	console.log(p3)
+	
+	console.log("---jquery----")
+	console.log($p3)
+	
+	//------------------------------------------
+	
+	//.css() 함수 사용하면 css 속성이 태그의
+// 	인라인속성으로 적용된다 -> style=""속성
+
+	$(".p2").css("background-color","gray")
+	
+	$("p:last-child").css("color","orange")
+	var pArr=document.getElementsByTagName("p");
+	pArr[pArr.length-1]
+
+	//------------------------------------------
+	
+	console.log("---- js ----")
+	console.log(p3)
+	
+	var $p3Dom=$(p3) //JS DOM - > jQuery DOM 변환
+	
+	console.log("---- jQuery ----")
+	console.log($p3Dom)
+		
+});
+
+</script>
+
+
+</head>
+<body>
+
+<div>
+	<p id="p1">하이</p>
+	<p class="p2">hello</p>
+	<p id="p3">welcome</p>
+</div>
+
+</body>
+</html>
+
+
+
