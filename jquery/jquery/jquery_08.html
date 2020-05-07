@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>20200507 javascript jquery_08</title>
+<script type="text/javascript"
+src="https://code.jquery.com/jquery-2.2.4.min.js"></script>
+
+<script type="text/javascript">
+$(document).ready(function(){
+	
+	// #myDiv의 첫번째 자식으로 <h1> 태그 생성
+	$("#myDiv").prepend( $("<h1>").text("PREPEND 테스트") );
+	
+	
+	// #myDiv 의 자식요소가 두 개 
+	// $("#myDiv").children() - <h1>,<ul>
+	// $("<ul>").text("영").prependTo( $("#myDiv").children());
+	$("<li>").text("영").prependTo( $("#myDiv").children() );
+	
+	// #myDiv 요소의 이전 형제로 <p> 생성
+	$("#myDiv").before( $("<p>").text("jQuery 어렵네~"))
+	
+	$("#myDiv").after( $("<p>").text("ㅠㅠ"))
+	
+})
+</script>
+
+</head>
+<body>
+
+
+<div id ="myDiv">
+<ul>
+	<li>하나</li>
+	<li>둘</li>
+	<li id="third">셋</li>
+	<li>넷</li>
+	<li>다섯</li>
+</ul>
+</div>
+
+
+</body>
+</html>
