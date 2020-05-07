@@ -1,0 +1,98 @@
++ n번째 노드에 접근하기
+
+ - $(객체).eq(idx) : idx번째 노드를 jQuery DOM 객체로 반환
+ 
+ - $(객체).get(idx) : idx번째 노드를 JS DOM 객체로 반환
+ 
+        ** jQuery DOM 객체에 [idx] 를 적용하면 get(idx) 과 같은 동작
+        
+        ex)   $p("p")[2] == $("p").get(2)
+        
+
++ 순차적으로 노드 접근하기( 반복문 ) 
+        
+        $(객체).each( function( idx, element ) {
+          // 요소마다 각각 반복될 코드
+        })
+        
+        idx : 객체의 인덱스
+        element : 해당 반복의 JS DOM 객체
+        
+
++ 객체 비교하기
+
+ - $(객체1).is( $(객체2) )
+      객체1과 객체2가 같은 객체인지 비교한다 (boolean 반환)
+
+
++ 하위노드 중에서 특정 노드 찾기
+
+ - $(객체).find( "selector" )
+      객체의 하위노드에서 selector에 해당하는 객체를 반환한다
+      
+
++ 자식 노드 찾기
+ - $(객체).children()
+      자식노드들 전체 선택
+ - $(객체).children("selector")
+      자식노드들 중에서 selector 에 해당하는 객체를 선택
+      
++ 부모 노드 찾기
+ - $(객체).parent()
+      부모노드 선택
+ - $(객체).parent("selector")
+      부모소드가 selector에 해당하면 선택
+
++ 조상 노드 찾기
+ - $(객체).parents()
+      부모노드 선택
+ - $(객체).parents("selector")
+      부모소드가 selector에 해당하면 선택
+
+
++ 이전 인접 형제 노드 찾기 
+ - $(객체).prev()
+ - $(객체).prev("selector")
+ 
+ + 이전 모든 형제 노드 찾기 
+ - $(객체).prevAll()
+ - $(객체).prevAll("selector")
+ 
+ + 다음 인접 형제 노드 찾기 
+ - $(객체).next()
+ - $(객체).next("selector")
+ 
+ + 다음 모든 형제 노드 찾기 
+ - $(객체).nextAll()
+ - $(객체).nextAll("selector")
+ 
+ + 노드 생성
+ 
+  - $("노드텍스트")
+        
+        ex)   $("<div>")    -<div>태그 객체가 생성된다
+        
+        ** $("<div>") - <div> 태그를 생성( createElement("div") )
+        ** $("div")   - div 태그를 선택( getElementsByTagName("div"))
+        
+        ** 두 구문 구분 잘하세요!
+
++ 노드 복사
+
+ - $(객체).clone()
+      객체를 복사하여 반환한다
+      
+      ex)   var $div2 = $("#myDiv").clone();
+      
+      ** 깊은 복사(Deep Copy) 로 새로운 사본이 만들어진다
+      ** 자식노드까지 함께 묶음으로 복사된다
+      
++ 노드 이동 / 추가
+
+ - $ 부모노드.append( $추가노드 ) 
+ - $   
+         부모노드의 마지막 자식으로 추가노드를 삽입한다
+         이미 다른 위치에 존재하던 노드라면 이동이 된다
+         
+ 
+ 
