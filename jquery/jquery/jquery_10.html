@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>20200507 javascript jquery_10</title>
+
+<!-- p 태그를 1개 생성한 후 "둘"로 내용물 작성 -->
+<!-- insertBefore()사용하여 순서에 맞게 추가하기 -->
+
+<script type="text/javascript"
+src="http://code.jquery.com/jquery-2.2.4.min.js"></script>
+<script type="text/javascript">
+$(document).ready(function(){
+	
+	//p태그 1개생성 내용물 둘로 작성
+	
+	var $p=$("<p>");
+	$p.text("둘");
+	
+	$("<p>").text("둘").insertBefore($("#third") );
+	
+	//강사님 1
+	//$("<p>").text("둘").insertBefore( $("div").find("p").eq(1))	
+
+	//강사님 2
+	//$("<p>둘</p>").insertBefore( $("div p:nth-child(2)"));
+	
+	
+	
+	
+})
+
+</script>
+
+</head>
+<body>
+
+<div id = "myDiv">
+	<p>하나</p>
+	<p id="third">셋</p>
+	<p>넷</p>
+	
+	
+</div>
+</body>
+</html>
