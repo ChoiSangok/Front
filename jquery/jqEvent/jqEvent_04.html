@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script type="text/javascript"
+src="http://code.jquery.com/jquery-2.2.4.min.js"></script>
+
+<script type="text/javascript">
+$(document).ready(function(){
+// 	***********************문제***************************
+	//전송버튼을 클릭하면 입력된 메시지를 alert() 한다
+	
+	//메시지입력창에서 엔터키를 누르면 #btnSend에 클릭이벤트를 발생시킨다!
+// 	***********************************************************************
+	
+	//최초 키보드 입력위치 조절
+	$("input[name~='msg']").focus();// 포커스 이벤트 발생시키기
+	
+	//동작 이벤트
+	$("#btnSend").on("click",function(){
+		// $(객체).val() - value속성의 값
+		alert("입력메시지: " + $("input[name~='msg']").val() )
+		
+		//input 태그의 value값을 ""(빈 문자열)로 채우기
+		$("input[name~='msg']").val("")
+
+	})
+
+})
+
+</script>
+</head>
+<body>
+
+<div>
+	<input type="text" name="msg"/>
+
+	<button id="btnSend">전송</button>
+</div>
+
+</body>
+</html>
