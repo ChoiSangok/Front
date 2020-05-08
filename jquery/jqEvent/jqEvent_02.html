@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>20200508 jq event_02</title>
+<script type="text/javascript"
+src="http://code.jquery.com/jquery-2.2.4.min.js"></script>
+
+<script type="text/javascript">
+
+function sayHi(){ alert("hi")}
+function red( ){ $(this).css("color","red")}
+var blue=function(){ $(this).css("color","blue")}
+
+$(document).ready(function(){
+	
+	//하나씩 말고 
+// 	$("#btnOk").on("click",sayHi)
+// 	$("#btnOk").on("mouseenter",red)
+// 	$("#btnOk").on("mouseleave",blue)
+
+
+	//한번에 처리하는 코드
+	//{} 객체로 한번에 다양한 이벤트리스너 등록하기
+	$("#btnOk").on ({
+		"click":sayHi,
+		"mouseenter":red,
+		"mouseleave":blue
+	});
+	
+	//-------------------------------------------
+	
+	//one() 함수로 딱 한번 동작하도록 이벤트 리스너 등록하기
+	$("#btnAlert").one ({
+		"click":sayHi,
+		"mouseenter":red,
+		"mouseleave":blue
+	});
+	
+	//--------------------------------------------------
+	//모든 버튼들이 click 이벤트리스너 제거
+	
+	$("button").off("click");
+	
+	//--------------------------------------------------
+	
+	//click 이벤트리스너 다시 등록하기
+	$("div > button#btnAlert").on("click",sayHi)
+});
+
+
+
+
+</script>
+
+
+</head>
+<body>
+
+<div>
+	<button id="btnOk">확인</button>
+	<button id="btnAlert">알림</button>
+
+
+</div>
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
