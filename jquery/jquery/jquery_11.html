@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>20200508 javascript jquery_11</title>
+<script type="text/javascript"
+src="http://code.jquery.com/jquery-2.2.4.min.js"></script>
+
+<script type="text/javascript">
+$(document).ready(function(){
+	
+	var $div = $("div");
+	
+	//width 스타일 가져오기
+	console.log( $div.css("width"))
+	
+	//width 스타일 지정하기
+	$div.css("width","500px")
+	
+	//---------------------------------
+	
+	//자바스크립트의 객체(object) 타입
+	// jQuery 에서는 PlainObject 라고 부른다
+	
+	var obj = {
+		"key":"value",
+		"key1" : 123,
+		"key2" : true,
+		"key3" : null
+	}
+	
+	//한번에 여러 개의 스타일 지정하기
+	
+	$div.css( {
+		"width" : "400px",
+		"height" : "300px",
+		"border-color" : "blue",
+		"display" : "inline-block"
+	} )
+	
+	// 여러 개의 스타일 값을 객체(Object )로 가져오기
+	var info = $div.css(["width","height","display"])
+	console.log(info)
+	
+	console.log("--- info.width ---")
+	console.log(info.width)
+	
+	info.width = "800px";
+	info.height="500px";
+	
+	console.log(info)
+	
+	$div.css(info)
+	
+	//-------------------------------------
+	$div.css("color","blue")
+	
+});
+</script>
+
+
+<style type="text/css">
+/* 임베디드 방식 스타일 적용 */
+div {
+	color:red !important;
+/* 	font-style:italic; */
+}
+</style>
+
+
+</head>
+<body>
+
+<div style="width: 300px !important; height: 200px; border:1px solid red;">
+	<p>하나</p>
+	<p>둘</p>
+	<p>셋</p>
+</div>
+
+</body>
+</html>
