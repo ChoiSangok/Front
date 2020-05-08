@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>20200508 javascript jquery_12</title>
+<script type="text/javascript"
+src="http://code.jquery.com/jquery-2.2.4.min.js"></script>
+
+<script type="text/javascript">
+$(document).ready(function(){
+	
+	//class 속성의 값 출력
+	console.log( $("div").attr("class"));
+	
+	//class 속성의 값 지정하기
+	// calss 속성은 attr() 함수를 사용할 때 주의가 필요하다
+	//			-> 클래스의 속성값을 전부 바꿔버림
+	
+	$("div").attr("class","st4");
+	
+	$("div").attr("id","mydiv")
+	
+	$("div").attr("style","width: 200px; height:300px;")
+	
+	//-------------------------------
+	
+	//background 를 일반 속성으로 부여한다 - 배경색 적용되지 않음
+	// style속성을 css() 함수가 아닌 attr() 함수로 적용하는 실수
+	$("p").eq(1).attr("background","tomato"); //코드 안된다
+// 	$("p").eq(1).attr("style","background:tomato") //background 컬러 변경됨
+	
+	//------------------------------------------------
+	
+	$("p").eq(2).attr({
+		"a":"1",
+		"b":"2",
+		"c":"3",
+		
+		"title":"테스트"
+	
+	})
+	//attr() 함수는 배열로 매개변수 전달 불가
+	// 한번에 여러 개 속성 불러 올 수 없음
+	
+// 	console.log( $("p").eq(2).attr(["a","b","c","title"]))
+
+	//-------------------------------------
+	
+	//모든 p 태그에 "red" 클래스 추가
+	
+	$("p").addClass("red")
+	
+	// 첫번째 p 태그에 "blue" 클래스 추가
+	$("p").eq(0).addClass("blue")
+	
+	// 첫번째 p태그에 "red" 클래스 제거
+	$("p").eq(0).removeClass("red")
+	
+	// $("p")[0] -> JS DOM 객체 : 에러
+// 	$("p")[0].addClass("red");
+	
+	//--------------------------
+	
+	//인라인 방식으로 스타일시트 적용
+	$("div").css("border","1px solid blue")
+	
+	//임베디드 방식으로 스타일 시트 적용 - class 속성
+	$("div").addClass("borderGray")
+	
+	//--------------------------
+	
+	//class 속성을 가지고 있는 모든 p태그들
+	$("p[class]").css("text-decoration","underline")
+	
+	
+	//모든 클래스 값 제거하기 - class 속성은 남아있고 값만 없어짐
+	
+	$("p[class]").removeClass()
+	
+})
+</script>
+<style type="text/css">
+.red{color:red;}
+.blue{color:blue;}
+.borderGray{border:1px solid #ccc;}
+
+</style>
+</head>
+<body>
+
+<div class="st1 st2 st3"
+ style ="width:300px; height:200px; border:1px solid red;">
+ 	<p>하나</p>
+ 	<p>둘</p>
+ 	<p>셋</p>
+</div>
+
+</body>
+</html>
