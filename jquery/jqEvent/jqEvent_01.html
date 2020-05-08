@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>20200508 jq event_01</title>
+<script type="text/javascript"
+src="http://code.jquery.com/jquery-2.2.4.min.js"></script>
+
+
+<script type="text/javascript">
+$(document).ready(function(){
+	
+	//btnOk 버튼 생성 - DOM 트리 에 추가되지 않았음
+	var $btnOk = $("<button id= 'btnOk'>확인</button>")
+	
+	
+	$("#btnAlert").on("click",function(){
+		alert("hola");
+		console.log("hihi");
+		
+		//<div> 태그의 첫번째 자식으로 btnOk 추가 - DOM 트리에 추가됨
+		$btnOk.prependTo( $("div"))
+		
+		//이벤트 리스너 코드에서 이벤트리스너 등록하는 코드를
+		//또 적으면, 등록되는 코드가 중첩돼서 처리된다
+		// -> 한번의 이벤트에 여러번 콜백함수가 호출됨
+	
+		//안에 넣지 말자
+		// 	$("#btnOk").on('click',function(){
+// 		alert("btnOk hellohello")
+// 		})
+	
+	})
+	//--------------------------------------
+	//#btnOk 요소에 click 이벤트 리스너 등록하기 - 동작안함	
+// 	$("#btnOk").on('click',function(){
+// 		alert("btnOk hellohello")
+// 	})
+	
+	// DOM 트리에 존재하지 않는 객체를 찾아서 출력하면
+	// n.fn.init 이라고 출력되지만 내용물이 비어있다
+	console.log( $("#btnOk"))
+	
+
+	// 이벤트리스너 와 요소노드가 bind 되는 시점에 
+	// #bntOk요소가 dom 트리에 존재하지 않는다
+	
+	//---------------------------------------------------
+	//동적(Dynamic )으로 생성되는 (추가되는) 요소에는
+	//이벤트리스너를 곧바로 등록할 수 없다
+	//		-> 이벤트리스너를 등록하는 시점에는 존재하지 않아서
+	
+	//----------------------------------
+	
+	//해결법 : 이벤트 리스너를 동적으로 바인딩한다
+	// 이벤트가 bind 되는 시점에 존재하는 부모 요소에 이벤트를 등록
+	// 동적으로 추가될 위치에 이벤트리스너를 등록해둔다
+	
+	//div #btnOk 걸어주는 것과 같음
+	//on() 함수의 두번째 인자로 선택자를 입력할 수 있다
+	// 이벤트가 동작하는 범위를 조절할 수 있다
+	
+	$("div").on("click", "#btnOk",function(){
+		//이벤트리스너를 div태그에 적용한다
+		//이벤트에 대한 반응은 "div #btnOk" 에서 처리 한다
+		// div 에 걸고 동작은 btnOk에서 함
+		alert("hello");
+		
+		// #btnAlert의 click 이벤트 리스너 제거
+// 		$("#btnAlert").off("click");
+		$("#btnAlert").off(); // -> 모든 이벤트가 제거
+		
+
+		
+	})
+
+	
+	$("#btnCancel").on("click",function(){
+		
+// 		console.log("cancel") // 확인
+
+// 		$("#btnOk").off("click"); //제거되지 않음
+// 		$("dio").off("click"); //제거됨, div에 걸린 모든 click제거
+		
+		
+		//on을 이용하여 이벤트를 등록한 긱체에 off해야한다
+		// 이벤트 동작이 #btnOk였어도 이벤트리스너가 등록된
+		// 주체는 div태그 -> div 태그 에서 이벤트를 제거해야함
+		$("div").off("click","#btnOk")
+	})
+	
+});
+</script>
+</head>
+
+<body>
+<div>
+	<button id="btnAlert">알림</button>
+	
+	<button id="btnCancel">알림 이벤트 제거</button>
+</div>
+
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
