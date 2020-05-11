@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>slider</title>
+<style type="text/css">
+/* 이미지 슬라이더 박스(div) */
+#sliderbox{
+	width:600px;
+	height:400px;
+	border: 1px solid #ccc;
+	
+/* 	외부정렬: 가운데정렬 */
+	margin: 0 auto;
+	
+/* 	div영역을 벗어난 부분 안보이게 처리하기 */
+ 	overflow: hidden; 
+	
+}
+
+/* 이미지 목록(ul) */
+#slider{
+
+/* 	ul 태그의 기본 스타일 없애기 */
+
+	padding: 0;  /* 내부여백 제거 */
+	margin: 0; /* 외부 여백 제거 */
+	list-style: none; /* 리스트스타일(disc) 제거 */
+	
+/* 	자식요소 absolute 박스의 기준점이 되는 설정 */
+
+	position: relative;
+
+}
+
+/* 이미지 항목 */
+
+#slider li{
+/* 	자유롭게 위치 이동시킬 수 있도록 설정 */
+	position: absolute;
+	
+}
+
+/* 이미지 */
+#slider li img{
+
+/* 	모든 이미지를 같은 크기 고정시키기 */
+	width: 600px;
+	height:400px;
+}
+
+</style>
+
+
+<script type="text/javascript"
+ src="https://code.jquery.com/jquery-2.2.4.min.js"></script>
+ 
+ 
+<script type="text/javascript">
+
+
+
+$(document).ready(function(){
+	
+	//ㄷ모든 이미지 항목 리스트
+	var $slider_list = $("#slider li")
+	console.log($slider_list);
+	
+	//모든 이미지 항목을 오른쪽으로 보내기(숨기기)
+// 	$slider_list.css("left","600px"); //600이라고 설정 안해도됨
+	$slider_list.css("left",$("#sliderbox").css("width"))
+	
+	//-------------------------------------
+	
+	//새로고침 하면 첫번째 이미지를 div안쪽으로 보내 보이도록 한다
+	$slider_list.eq(0).css("left",0);  // 같은selector로 할때 $("#slider li:first-child").css("left",0);
+	//-------------------------------------
+	
+	//#sliderbox 에 클릭이 될 때마다 이미지를 한 장씩 교체하기
+	// - > 이미지 슬라이드
+	
+	var curSlide = 0; //현재 슬라이드인덱스
+	
+	
+	var sliderClick= function(){
+		$("#sliderbox").click();
+		
+	}
+	
+	var tid = setInterval(sliderClick,2000);
+	
+	
+	
+	
+	
+	//클릭할때 마다 한 장 씩 교체하기
+	$("#sliderbox").click(function(){
+		
+		//클릭이 될 때 마다 타이머 객체 제거하고 다시 등록
+		clearInterval(tid);
+		tid = setInterval(sliderClick,2000);
+// 		console.log("clicked") //클릭이벤트 확인
+
+		var nextSlide = curSlide + 1; //다음 슬라이드 인덱스
+		//이미지 개수만큼 보정하ㅣㄱ
+ 		nextSlide %= $slider_list.length;
+		
+		
+		
+		
+		
+// 		if(nextSlide == 4){
+// 			curSlide =0;
+// 		}
+
+
+
+// 		현재 슬라이드 숨기기 : curSlide
+		//<div> 태그의 오른쪽으로 보내기
+		$slider_list.eq(curSlide).css("left",$("#sliderbox").css("width"))
+
+// 		다음 슬라이드 보여주기 : nextSlide
+// 		<div> 태그의 안쪽으로 보내기
+		$slider_list.eq(nextSlide).css("left",0)
+		
+// 		순한구조 확인하기
+		curSlide++;
+		
+// 		이미지 개수만큼 보정하기
+		curSlide %= $slider_list.length;
+
+
+	})
+
+
+});
+</script>
+</head>
+<body>
+<div id="sliderbox">
+	<ul id="slider">
+		<li><img src="http://i.imgur.com/viuPHoS.gif" /></li>
+		<li><img src="http://i.imgur.com/i7sW1WN.jpg" /></li>
+		<li><img src="https://i.imgur.com/4AiXzf8.jpg" /></li>
+		<li><img src="https://i.imgur.com/y1EO9AJ.jpg"/></li>
+		<li><img src="https://i.imgur.com/Jvh1OQm.jpg"/></li>
+	</ul>
+</div>
+
+</body>
+</html>
+
+
