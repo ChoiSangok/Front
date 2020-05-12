@@ -2,93 +2,89 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>RegEx_04</title>
-<script type="text/javascript"src="https://code.jquery.com/jquery-2.2.4.min.js"></script>
+<title>Insert title here</title>
+<script type="text/javascript"
+src="https://code.jquery.com/jquery-2.2.4.min.js"></script>
 <script type="text/javascript">
 $(document).ready(function(){
-   
-   //jQuery 스타일로 이벤트 리슽너 등록하기
-//    $("#myForm").on("submit",function(){
-//    });
-//    //==
-//    $("#myForm").submit(function(){
-//    });
-//    //==
-//    myForm.onsubmit =function(){
-//    }
-//    //==
-//    myForm.addEventListener("submit",function(){
-//    });
+	
+	$("#uid").focus();
+	
+	$("#myForm").submit(function(){
+		console.log("submit 이벤트 ㅅ발생")
+		//return; 함수만 종료되고 submit 은 된다\
+		
+		//#uid검증
+		
+		var uidReg=/^[A-Z][A-Za-z0-9]{5,}$/;
+		if(!uidRig.test($("#uid").val())){
+			alert("아이디 잘 입력하세요");
+			$("#uid").val("");
+			return false; //submit을 중단시켜준다
+			// 이벤트으 ㅣ동작을 중단시키는 코드 - submit 이 수행되지 않음
+			
+		}
+		
+		//#upw 검증
+		var upwReg = /^[A-Za-z0-9]{6,}$/;
+		if(!upwReg.test($("#upw").val())){
+			alert("비밀번호 입력하세요");
+			
+			//다지우기
+			$("#upw").val("")
+			$("#upw_chk").val("");
+			return false;
+		}
+		
+		//#upw_chk
+		if($("#upw").val()!=$("#upw_chk").val()){
+			alert("비밀번호가 다릅니다");
+			
+			//다지우기
+			$("#upw_chk").val("");
+			$("#upw").val("")
+			$("#upw").focus();
+			
+			//비밀번호 확인 창에 select이벤트 발생시키기
+			//->focus 로 넘어감
+			$("#upw_chk").select();
+			return false;
+		}
+		//이벤트의 동작을 정상적으로 보내는 코드
+		return true;
+	
+	});
+	
+	$("btnComment").click(function(){
+		if(comment.style.display=="none"){
+			
+			//jq방법으로 처리하기
+			$("#comment").show();
+			//js 방법으로 처리하기
+			//comment.style.display="inline-block";
+			
+		}
+		else{
+			$("#comment").hide();
+		}
+	})
 
-$("#uid").focus();
-
-$("#myForm").submit(function(){
-   console.log("submit 이벤트 발생");
-//   return; 함수만 종료되고 submit은 된다
-   
-   //#uid 검증
-   var uidReg =/^[A-Z][A-Za-z0-9]{5,}$/;   
-   if(!uidReg.test($("#uid").val())){
-      alert("아이디 잘 입력하세요");
-      $("#uid").val("");
-      return false; //submit을 중단시켜준다
-      //이벤트의 동작을 중단시키는 코드-submit이 수행되지않음
-   }
-   //#upw검증
-   var upwReg =/^[A-Za-z0-9]{6,}$/;
-   if(!upwReg.test($("#upw").val())){
-      alert("비밀번호 잘 입력하세요");
-      //다지우기
-      $("#upw").val("");
-      $("#upw_chk").val("");
-      return false; 
-   }   
-   //#upw_chk
-   if($("#upw").val()!=$("#upw_chk").val()){
-      alert("비밀번호이 다릅니다!");
-      //다지우기
-      $("#upw_chk").val("");
-      $("#upw").val("");
-      $("#upw").focus();
-      
-      //비밀번호 확인 창에 select 이벤트 발생시키기
-      //   -> 내용을 선택한 채로 focus 넘어감
-      $("#upw_chk").select();      
-      return false; 
-   }
-    //이벤트의 동작을 정상적으로 보내는 코드
-    return true;
-});
-
-$("#btnComment").click(function(){
-   if(comment.style.display=="none"){
-      // jq방법으로 처리하기
-      $("#comment").show();
-      // js방법으로 처리하기
-      //   comment.style.display="inline-block";
-      }   
-   else{
-      $("#comment").hide();
-   }
-   
-   //$("#comment").toggle() ; 숨기기 보여지기 알아서 
-});
-
-});
-
+})
 
 </script>
 </head>
 <body>
-   <form action="#" method ="post" id="myForm">
-      아이디 : <input type="text" name="uid" id="uid"><br><br>
-      비밀번호 : <input type="password" name="upw" id="upw"><br><br>
-      비밀번호 확인 : <input type="password" name="upw_chk" id="upw_chk"><br><br>
-      <!-- 전송 -->
-      <input type="submit" value="전송" id="usub">
-   </form>
-   <hr>
-   <button id="btnComment">자기소개</button><br><br>
-   <textarea rows="5" cols="50" id="comment" style="display:none"></textarea>
+	<form action="#" method="post" id="myForm">
+	아이디: <input type="text" name="uid" id="uid"><br><br>
+	비밀번호 : <input type="text" name="upw" id="upw"><br><br>
+	비밀번호 확인: <iuput type="text" name="upw_chk" id="upw_chk"><br><br>
+	
+<!-- 	전송 -->
+	<input type="submit" value="전송" id="usub">
+	</form>
+	<hr>
+	<button id="btnComment">자기소개</button><br><br>
+	<textarea rows="5" cols="50" id="comment" style="display:none"></textarea>
+
 </body>
 </html>
