@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+
+<style type="text/css">
+
+table,tr,th,td{
+	border: 1px solid black;
+	border-spacing: 2;
+	border-collapse: 2;
+}
+
+
+</style>
+
+<script type="text/javascript"
+src="https://code.jquery.com/jquery-2.2.4.min.js"></script>
+
+<script type="text/javascript">
+
+$(document).ready(function(){
+	
+	
+	$("#tr1").click(function(){
+		
+		$("#tr1").css("color","white")
+				.css("background","black");
+	})
+	
+	
+	$("#tr2").click(function(){
+		
+		$("#tr2").css("color","white")
+				.css("background","black");
+	})
+	
+	
+	$("#tr3").click(function(){
+		
+		$("#tr3").css("color","white")
+				.css("background","black");
+	})
+	
+})
+
+</script>
+</head>
+<body>
+
+<table>
+	<tr>
+		<th>번호</th>
+		<th>제목</th>		
+		<th>작성자</th>
+		<th>조회수</th>
+		<th>작성일자</th>
+	</tr>
+	
+	<tr id="tr1">
+		<td>102</td>
+		<td>새학기 맞이 이벤트 안내</td>
+		<td>관리자</td>		
+		<td>1004</td>
+		<td>2019-03-01</td>
+	</tr>
+	
+	<tr id="tr2">
+		<td>101</td>
+		<td>설연휴 맞이 이벤트 안내</td>
+		<td>관리자</td>
+		<td>1004</td>
+		<td>2019-02-01</td>
+	</tr>
+	
+	<tr id="tr3">
+		<td>100</td>
+		<td>신년 맞이 이벤트 안내</td>
+		<td>관리자</td>
+		<td>1004</td>
+		<td>2019-01-01</td>
+	</tr>
+</table>
+
+<span>선택된 행</span><br>
+<span id="s1">번호 : </span>
+<span id="s2">제목 : </span> <br>
+<span id="s3">작성자 : </span>
+<span id="s4">조회수 : </span>
+<span id="s5">작성일자 : </span>
+
+</body>
+</html>
+
+
+
+
+
