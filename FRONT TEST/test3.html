@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8" lang="ko">
+<title>회원가입</title>
+<!-- 연결 -->
+<script type="text/javascript"
+src="../resources/js/jquery-3.4.1.min.js"></script>
+<!-- 연결 -->
+<script type="text/javascript"
+src="https://code.jquery.com/jquery-2.2.4.min.js"></script>
+
+<script type="text/javascript">
+$(document).ready(function(){
+
+	$("#userpwd").blur(function() {
+		
+		var reg= /^[A-Za-z0-9]{8,}$/;
+		
+		if(!reg.test($(this).val())){
+			alert("8글자 이상 영문자 숫자만 가능")
+			$(this).val("")
+			//focus 괄호 x
+			$(this).focus;
+			
+		}
+	})
+	
+	
+	$("#username").blur(function(){
+		
+		var reg=/^[가-힣]{2,}$/;
+		
+		if(!reg.test($(this).val())){
+			alert("2글자 이상, 한글만 가능");
+			
+			$(this).val("");
+			$(this).focus;
+		}
+	})
+	
+	//ㅇ아ㅏㅏㅏㅏ기억이안나다아ㅏㅏ
+	
+	$("#pw_check").blur(function(){
+		
+		if( $(this).val() != $("#userpwd").val() ) {
+			
+			next($(this)).$("#divcheck").html("비밀번호가 일치하지 않습니다").css("color","green")
+			
+		
+		}
+		else{
+			$(this).next($(this)).html("비밀번호가 일치합니다").css("color","red")
+			
+		}
+	})
+	
+	//파일 업로드 함수 어ㅕ루어라 생각이안나다아ㅏ
+	
+	$("#upfile").change(function( e ){
+		
+		var fi=e.target.files;
+		var load= new FileReader();
+		
+		load.onload(function () {
+			$("#preview").html($("<div>")).css({
+				"height":250,
+				"width" :200			
+			})
+		})
+	})
+})
+
+
+</script>
+
+</head>
+<body>
+
+<datalist id="myinter">
+	<option value="java">java</option>
+	<option value=" html/css"> html/css</option>
+	<option value="javascript/jquery">javascript/jquery</option>
+</datalist>
+
+
+
+<form action="#" method="post" id="form">
+<ul>
+	<li> 이메일 <input type="email" id="email"></li>
+	<li> 비밀번호 <input type="password" id="userpwd" name="userpwd"></li>
+	<li> 비밀번호확인<input type="password" id="pwdchk" name="pw_check">
+	<div id="divcheck"></div>
+	</li>
+	<li> 이름 <input type="text" id="username" ></li>
+	
+	<li> 특기 <input type="text" list="myinter" id="interests"  name="interests" placeholder="선택하시오">
+	<li>프로필사진 : <input type="file" id="upfile" name="upfile">
+	<div id="preview"></div>
+
+</ul>
+<table>
+<tr>
+	<td><input type="submit" id="submit" value="회원가입"><button type="reset" id="re" value="취소">취소</button></td>
+</tr>
+</table> 
+</form>
+
+
+</body>
+</html>
